@@ -570,7 +570,9 @@
   {
    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0idYcm-_soX8uswGOxqefVo4cvp5hUnV4fXFmFIQk5w&s=10",
    "links": [],
-   "hidden": [],
+   "hidden": [
+    "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVnZySHVqeHRWRUZEcHN5MS1zV0NvRnRlWjhTcng1SEE0TWFxZU9hUFZpYkhqLWplYk0yTlhWT1Z6N0REWUxpRE5JN1FwNXJpdnFUS1k2ZF9SNG53NE51aWVLaUxDQzE3VVI5YkJQb1NHd3ZCNF81V3dGVktqLVNBeWZVQ2cyTUVBMUtkbEpSLXViSEJ4?oc=5"
+   ],
    "added": "2026-11-18",
    "maker": "Mercedes-Benz",
    "search": [
