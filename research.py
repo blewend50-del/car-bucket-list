@@ -25,6 +25,7 @@ import re
 import sys
 import time
 import unicodedata
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -157,15 +158,15 @@ class Plan:
         return list(dict.fromkeys(own + self.id_searches(car, own or inherited) + inherited))
 
     def id_searches(self, car, base=None):
-        """Searches that add the car's identifiers, e.g. '"300 SLR" ("0008/55" OR "red interior")'."""
+        """One search per identifier on the main search, e.g. '"300 SLR" "0008/55"'.
+        Google loosens a search that ORs several identifiers together, so they are kept apart."""
         if not car.get("ids"):
             return []
         if base is None:
             seen = {car["id"]}
             parent = self.parent(car, seen)
             base = car.get("search") or (self.searches(parent, seen) if parent else [car["name"]])
-        ids = " OR ".join('"%s"' % i.replace('"', "") for i in car["ids"])
-        return ["%s (%s)" % (p, ids) for p in base]
+        return ['%s "%s"' % (base[0], i.replace('"', "")) for i in car["ids"]]
 
 
 def matches(item, groups):
@@ -179,12 +180,21 @@ _cache = {}
 def search(phrase, via):
     key = (phrase, via)
     if key not in _cache:
-        try:
-            _cache[key] = parse_rss(fetch(SOURCES[via].format(q=urllib.parse.quote(phrase))), via)
-        except Exception as e:  # one dead source should not stop the run
-            print(f"  ! {via} '{phrase}': {e}", file=sys.stderr)
+        url = SOURCES[via].format(q=urllib.parse.quote(phrase))
+        for attempt in range(3):
+            try:
+                _cache[key] = parse_rss(fetch(url), via)
+                break
+            except urllib.error.HTTPError as e:
+                if e.code == 429 and attempt < 2:   # too many requests: wait, then try again
+                    time.sleep(60 * (attempt + 1))
+                    continue
+                print(f"  ! {via} '{phrase}': {e}", file=sys.stderr)
+            except Exception as e:  # one dead source should not stop the run
+                print(f"  ! {via} '{phrase}': {e}", file=sys.stderr)
             _cache[key] = []
-        time.sleep(1)
+            break
+        time.sleep(1.5)
     return _cache[key]
 
 
@@ -203,7 +213,9 @@ def research(car, plan, known):
     stamp = now()
     for phrase in plan.searches(car):
         for via in SOURCES:
-            need = groups[:-1] if phrase in by_text and via != "Web" else groups
+            if phrase in by_text and via == "Web":
+                continue   # Bing web ignores the quotes, so an identifier search there only adds noise
+            need = groups[:-1] if phrase in by_text else groups
             for item in search(phrase, via):
                 u, t = norm_url(item["url"]), norm_title(item["title"])
                 if u in hidden or u in seen_urls or t in seen_titles or not matches(item, need):

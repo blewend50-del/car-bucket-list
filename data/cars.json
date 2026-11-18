@@ -566,6 +566,573 @@
    "notes": "The one-off original XJ220. Idea by chief engineer Jim Randle (December 1984), designed by Keith Helfet, built by \"the Saturday Club\": about a dozen Jaguar engineers and designers working in their own time, helped by about forty suppliers. 6.2 L quad-cam V12, prototype four-wheel drive, Group C-based chassis, aluminium body. Unveiled by Sir John Egan at the Birmingham Motor Show (NEC), 18 October 1988. The production car (281 built 1992-1994) switched to a twin-turbo V6 and rear-wheel drive. Not road registered.",
    "parent": "",
    "ids": []
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [
+    "\"CLK GTR\"",
+    "\"CLK-GTR\"",
+    "\"CLK GTR\" roadster"
+   ],
+   "require": [
+    [
+     "CLK GTR"
+    ]
+   ],
+   "id": "1998-mercedes-benz-clk-gtr",
+   "name": "Mercedes-Benz CLK GTR",
+   "year": "1998",
+   "status": "Private owner",
+   "location": "Private collections worldwide",
+   "notes": "Road-going homologation version of the 1997-98 FIA GT championship winner (the race cars are not tracked here). 26 road cars: 20 coupés (plaques 01/25 to 20/25) and 6 roadsters (21/25 to 25/25, plus a sixth built later outside the count), after two factory prototypes/demonstrators. Plaques on the dash, centre console and door sills. Coupés built late 1998 to 1999 at about $1.5M; roadster years given as 2002 or 2006. 6.9 L V12 (about 612-623 hp), 6-speed sequential, 1,470 kg, 199 mph.\n\nSuper Sport: HWA later fitted the 7.3 L V12 (655-720 hp) to prototype 2 and coupés 01, 03, 13 and 17 (Supercar Nostalgia; Rare Cars Only also names 19).\n\nVINs run WDB2973971Y0000NN; Ultimatecarpage says the first 11 went to race cars and prototypes, so 000012 is the first road car. Identifiers use \"N of 25\" rather than \"NN/25\" because search engines read \"07/25\" as a date.\n\nRace-car articles also mention \"CLK GTR\", so they appear in this entry's own list."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-demonstrator",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 1997 demonstrator",
+   "year": "1997",
+   "ids": [
+    "WDBA2973971Y000002",
+    "LB-RA-204"
+   ],
+   "status": "Private owner",
+   "location": "Unknown (sold Bonhams, August 2003)",
+   "notes": "VIN WDBA2973971Y000002, plate LB-RA-204. One of two factory demonstrators (the other was LB-RA-100), used for magazine road tests and brochures; not one of the 25. Sold by HWA in 1999 to a friend of AMG founder Hans Werner Aufrecht; engine enlarged to 7.3 L in 2001 (over 700 bhp). Sold at Bonhams in August 2003 for just over €800,000 with 12,500 on the odometer."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-01",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 01/25 \"Super Sport\"",
+   "year": "1999",
+   "ids": [
+    "1 of 25",
+    "WDB2973971Y000012"
+   ],
+   "status": "Private owner",
+   "location": "USA (last known 2012)",
+   "notes": "VIN WDB2973971Y000012, the first customer road car. Super Sport (7.3 L, HWA). Sold new to the USA; offered by RM 2010/2012 with 1,335 miles ($1.1M listed by Ultimatecarpage)."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-02",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 02/25",
+   "year": "1999",
+   "ids": [
+    "2 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Coupé. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-03",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 03/25 \"Super Sport\"",
+   "year": "1999",
+   "ids": [
+    "3 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Super Sport (Supercar Nostalgia). No other history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-04",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 04/25",
+   "year": "1999",
+   "ids": [
+    "4 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Coupé. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-05",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 05/25 \"tartan\"",
+   "year": "1999",
+   "ids": [
+    "5 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Tartan interior (Supercar Nostalgia). No other history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-06",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 06/25",
+   "year": "1999",
+   "ids": [
+    "6 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Coupé. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-07",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 07/25 \"Iridium Silver\"",
+   "year": "1999",
+   "ids": [
+    "7 of 25",
+    "WDB2973971Y000018",
+    "Iridium Silver",
+    "tartan"
+   ],
+   "status": "Private owner",
+   "location": "USA; unsold at RM Las Vegas, November 2023",
+   "notes": "VIN WDB2973971Y000018. Iridium Silver Metallic with blue-grey tartan. Completed at HWA 27 April 1999, delivered 12 May 1999 to Switzerland (St. Gallen, SG 110706); Swiss owner until 2010; German collection to 2017 (Kienle, 6,376 km); to the USA October 2017 (federalised by JK Technologies); consignor from April 2021 (6,448 km), over $71,000 of DK Engineering work; Carfection group test with McLaren F1 037 and Porsche 911 GT1 005. RM Sotheby's Las Vegas 17 Nov 2023, Lot 19, estimate $8-9M, not sold (7,015 km)."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-08",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 08/25",
+   "year": "1999",
+   "ids": [
+    "8 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Coupé. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-09",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 09/25 \"Eschmann\"",
+   "year": "1999",
+   "ids": [
+    "9 of 25",
+    "WDB2973971Y000020",
+    "Eschmann"
+   ],
+   "status": "Private owner",
+   "location": "USA (sold Monterey 2018; unsold at Gooding 2021)",
+   "notes": "VIN WDB2973971Y000020. Sold new to Hermann Eschmann, Gummersbach, Germany; kept until 2005; Hong Kong collection about 12 years; to the USA end of 2017 (federalised April 2018). Sold for $4,515,000 at RM Sotheby's Monterey 2018 (Lot 241) with 1,439 km. Gooding Pebble Beach 2021: no sale."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-10",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 10/25",
+   "year": "1999",
+   "ids": [
+    "10 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Coupé. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-11",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 11/25",
+   "year": "1999",
+   "ids": [
+    "11 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Coupé. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-12",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 12/25 \"12th built\"",
+   "year": "1999",
+   "ids": [
+    "12 of 25",
+    "WDB2973971Y000023"
+   ],
+   "status": "Private owner",
+   "location": "Unknown (unsold at Bonhams Paris 2016)",
+   "notes": "VIN WDB2973971Y000023, \"12th of the 25\" (Ultimatecarpage; plaque number not stated, 12/25 assumed). Sold new to a Swiss enthusiast in 2000, kept to 2014 (3,285 km). Bonhams Paris (Grand Palais) 2016: no sale."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-13",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 13/25 \"Brunei\"",
+   "year": "1999",
+   "ids": [
+    "13 of 25",
+    "Brunei"
+   ],
+   "status": "Private owner",
+   "location": "Sultan of Brunei (as built)",
+   "notes": "Super Sport, tartan, right-hand drive, built for the Sultan of Brunei (Supercar Nostalgia)."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-14",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 14/25",
+   "year": "1999",
+   "ids": [
+    "14 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Coupé. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-15",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 15/25",
+   "year": "1999",
+   "ids": [
+    "15 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Coupé. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-16",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 16/25",
+   "year": "1999",
+   "ids": [
+    "16 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Coupé. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-17",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 17/25 \"Red\"",
+   "year": "1999",
+   "ids": [
+    "17 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Red, Super Sport (Supercar Nostalgia). Ultimatecarpage mentions an HWA engine upgrade on \"chassis 017\", which may or may not be this car."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-18",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 18/25",
+   "year": "1999",
+   "ids": [
+    "18 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Coupé. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-19",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 19/25 \"Blue\"",
+   "year": "1999",
+   "ids": [
+    "19 of 25",
+    "blue CLK GTR"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Dark blue, said to be the only blue one. Rare Cars Only (2024) calls it a Super Sport; Supercar Nostalgia doesn't list it as one. Photographed 2006 and 2021."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-20",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 20/25 \"Black\"",
+   "year": "1999",
+   "ids": [
+    "20 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Black (Supercar Nostalgia). No other history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-21",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 21/25 \"Roadster, Black\"",
+   "year": "",
+   "ids": [
+    "21 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Roadster, black (Supercar Nostalgia). No other history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-22",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 22/25 \"Roadster, Brunei\"",
+   "year": "",
+   "ids": [
+    "22 of 25",
+    "magenta"
+   ],
+   "status": "Private owner",
+   "location": "Sultan of Brunei (as built)",
+   "notes": "Roadster, dark silver with magenta leather, right-hand drive, built for the Sultan of Brunei (Supercar Nostalgia). Possibly the same car as roadster VIN 000034, but that one is described with black and grey leather."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-23",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 23/25 \"Roadster\"",
+   "year": "",
+   "ids": [
+    "23 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Roadster. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-24",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 24/25 \"Roadster\"",
+   "year": "",
+   "ids": [
+    "24 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Roadster. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-25",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR 25/25 \"Roadster\"",
+   "year": "",
+   "ids": [
+    "25 of 25"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Roadster. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-roadster-000034",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR Roadster VIN 000034",
+   "year": "2002",
+   "ids": [
+    "WDB2973971Y000034",
+    "third of six"
+   ],
+   "status": "Private owner",
+   "location": "Unknown buyer, RM Las Vegas, November 2023",
+   "notes": "VIN WDB2973971Y000034, \"the third of only six\" roadsters; its 21-25 plaque number isn't stated. Silver over black and grey leather. Wisconsin collector August 2011 (25 km); Arkansas dealer March 2013; North Carolina dealer to April 2015; UK collector (consignor), on static display from 2018. Sold for $10,235,000 at RM Sotheby's Las Vegas, 17 Nov 2023 (Lot 38), 170 km."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "clk-gtr-roadster-6th",
+   "parent": "1998-mercedes-benz-clk-gtr",
+   "name": "CLK GTR sixth roadster",
+   "year": "",
+   "ids": [
+    "sixth roadster"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Built after production ended and not counted in the 25 (Rare Cars Only). No other history found."
   }
  ]
 }
