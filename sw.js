@@ -1,5 +1,5 @@
 // App shell cache-first, data network-first, so the list opens offline.
-const CACHE = "bucket-v2";
+const CACHE = "bucket-v3";
 const SHELL = ["./", "index.html", "manifest.webmanifest", "icon-180.png"];
 self.addEventListener("install", e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())));
 self.addEventListener("activate", e => e.waitUntil(
