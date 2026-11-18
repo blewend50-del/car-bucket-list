@@ -34,7 +34,10 @@
    "added": "2026-11-18",
    "maker": "Mercedes-Benz",
    "search": [
-    "\"300 SLR\""
+    "\"300 SLR\"",
+    "\"300SLR\"",
+    "\"300 SLR\" Mille Miglia",
+    "\"300 SLR\" Le Mans"
    ],
    "require": [
     [
@@ -45,10 +48,150 @@
    "name": "Mercedes-Benz 300 SLR",
    "year": "1955",
    "status": "Collection",
-   "location": "Various",
-   "notes": "Sports-racing car of the 1955 season. 9 built, 8 survive. Add each surviving car with + Specific car, using its chassis number, race number or nickname as identifiers.",
+   "location": "Mostly Mercedes-Benz, Stuttgart; one at the Cité de l'Automobile, Mulhouse",
+   "notes": "W196S sports-racing car that won the 1955 World Sportscar Championship. Wikipedia: 9 chassis built, 7 open race cars and 2 coupés; one (0006/55) destroyed at Le Mans, so 8 survive. Sources disagree: Supercar Nostalgia says eight in some places and nine in others; Ultimatecarpage lists 0009/55 as never completed and 0010/55 as a test car.\n\nChassis 0007/55 and 0008/55 became the Uhlenhaut Coupés, tracked as their own entry (Mercedes-Benz 300 SLR Uhlenhaut Coupé).",
    "parent": "",
    "ids": []
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "parent": "1955-mercedes-benz-300-slr",
+   "id": "300-slr-0001-54",
+   "name": "300 SLR 0001/54",
+   "year": "1954",
+   "ids": [
+    "0001/54"
+   ],
+   "status": "Museum",
+   "location": "Mercedes-Benz Museum, Stuttgart",
+   "notes": "The first 300 SLR. Moss 2nd at the 1955 Eifelrennen (#3), its only race. Shown for years at the Henry Ford Museum, Dearborn, then returned to Stuttgart."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "parent": "1955-mercedes-benz-300-slr",
+   "id": "300-slr-0002-55",
+   "name": "300 SLR 0002/55",
+   "year": "1955",
+   "ids": [
+    "0002/55"
+   ],
+   "status": "Collection",
+   "location": "Mercedes-Benz (factory collection)",
+   "notes": "Development car and team spare (T-car at the Tourist Trophy and Targa Florio). Never raced. Registered AW 84 7984."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "parent": "1955-mercedes-benz-300-slr",
+   "id": "300-slr-0003-55",
+   "name": "300 SLR 0003/55 \"Fangio\"",
+   "year": "1955",
+   "ids": [
+    "0003/55",
+    "658"
+   ],
+   "status": "Collection",
+   "location": "Mercedes-Benz (factory collection)",
+   "notes": "Fangio's car: 2nd in the Mille Miglia (#658, solo), won the Eifelrennen and the Swedish GP, 3rd at the Tourist Trophy, 2nd at the Targa Florio (Fangio/Kling), which clinched the 1955 title."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "parent": "1955-mercedes-benz-300-slr",
+   "id": "300-slr-0004-55",
+   "name": "300 SLR 0004/55 \"722\"",
+   "year": "1955",
+   "ids": [
+    "0004/55",
+    "722",
+    "Jenkinson"
+   ],
+   "status": "Collection",
+   "location": "Mercedes-Benz (factory collection)",
+   "notes": "Moss and Jenkinson won the 1955 Mille Miglia as #722, a record that still stands. Also won the Tourist Trophy (Moss/Fitch) and the Targa Florio (Moss/Collins). Raced in all six 1955 events and won three. Often called the most valuable car in the world."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "parent": "1955-mercedes-benz-300-slr",
+   "id": "300-slr-0005-55",
+   "name": "300 SLR 0005/55 \"Schlumpf\"",
+   "year": "1955",
+   "ids": [
+    "0005/55",
+    "Schlumpf",
+    "Cité de l'Automobile",
+    "Mulhouse"
+   ],
+   "status": "Museum",
+   "location": "Cité de l'Automobile, Mulhouse, France (Schlumpf Collection)",
+   "notes": "Kling crashed out of the Mille Miglia (#701), 2nd at the Tourist Trophy (Fangio/Kling), 4th at the Targa Florio. Lent to the Schlumpf brothers in 1966; stayed after the French state bought the collection in 1981."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "parent": "1955-mercedes-benz-300-slr",
+   "id": "300-slr-0006-55",
+   "name": "300 SLR 0006/55 \"Le Mans #20\"",
+   "year": "1955",
+   "ids": [
+    "0006/55",
+    "Levegh"
+   ],
+   "status": "Lost / destroyed",
+   "location": "Destroyed at Le Mans, 11 June 1955",
+   "notes": "Pierre Levegh / John Fitch, #20. Destroyed in the 1955 Le Mans disaster, which killed Levegh and 83 spectators. Earlier crashed by Herrmann in the Mille Miglia (#704). The sources don't say what became of the wreckage."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "parent": "1955-mercedes-benz-300-slr",
+   "id": "300-slr-0010-55",
+   "name": "300 SLR 0010/55 \"test car\"",
+   "year": "1955",
+   "ids": [
+    "0010/55"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Listed only by Ultimatecarpage: the last 300 SLR built in 1955, used to test new parts, never raced. Supercar Nostalgia doesn't list it."
   },
   {
    "id": "mercedes-benz-300-slr-uhlenhaut-coup",
@@ -75,8 +218,7 @@
    "maker": "Mercedes-Benz",
    "links": [],
    "hidden": [],
-   "added": "2026-11-18",
-   "parent": "1955-mercedes-benz-300-slr"
+   "added": "2026-11-18"
   },
   {
    "photo": "",
