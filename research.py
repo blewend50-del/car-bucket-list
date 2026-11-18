@@ -2,9 +2,19 @@
 """Search the web for every car in data/cars.json and add new finds to data/articles.json.
 
 Sources (free, no keys): Google News RSS, Bing News RSS, Bing web search RSS.
-A result is kept only if its title + summary contains at least one word from
-every group in the car's "require" list. Articles are never deleted, so the
-file becomes the car's history. Standard library only.
+
+A car can be a model ("Mercedes-Benz 300 SLR") or one specific car that is
+"part of" another entry ("parent") and named by its identifiers ("ids":
+chassis numbers, nicknames, race numbers).
+
+A result is kept only if its title + summary matches every "Must mention"
+group (one word from each). A car without its own groups uses its parent's,
+and a car with ids must also mention one of them. Words match whole words,
+ignoring case and accents, so "red" does not match "offered" and "Coupe"
+matches "Coupé". A number like "0008/55" also matches "00008/55" and "8/55".
+
+Articles are never deleted, so the file becomes each car's history. Standard
+library only.
 
     python3 research.py            # all cars
     python3 research.py bmw-x5-le-mans
@@ -14,6 +24,7 @@ import json
 import re
 import sys
 import time
+import unicodedata
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -37,6 +48,7 @@ SALE_WORDS = re.compile(
     re.I,
 )
 TAG_RE = re.compile(r"<[^>]+>")
+SEP = r"[\s\-–—/.]*"   # "0008/55", "0008-55" and "0008 55" are the same chassis
 
 
 def now():
@@ -51,6 +63,22 @@ def fetch(url):
 
 def clean(text):
     return html.unescape(TAG_RE.sub(" ", text or "")).replace("\xa0", " ").strip()
+
+
+def fold(text):
+    """Lower case without accents: "Coupé" -> "coupe"."""
+    return "".join(c for c in unicodedata.normalize("NFKD", text) if not unicodedata.combining(c)).lower()
+
+
+def word_re(term):
+    parts = [p for p in re.split(r"[\s\-–—/.]+", fold(term).strip()) if p]
+    if not parts:
+        return None
+    lead = ""
+    if parts[0].isdigit():   # chassis numbers: ignore leading zeros
+        parts[0] = parts[0].lstrip("0") or "0"
+        lead = "0*"
+    return re.compile(r"(?<!\w)" + lead + SEP.join(re.escape(p) for p in parts) + r"(?!\w)")
 
 
 def norm_url(url):
@@ -95,47 +123,106 @@ def parse_rss(raw, via):
     return items
 
 
-def matches(item, require):
-    text = (item["title"] + " " + item["summary"]).lower()
-    return all(any(word.lower() in text for word in group) for group in require)
+class Plan:
+    """Works out each car's searches and Must-mention groups, following "parent" links."""
+
+    def __init__(self, cars):
+        self.by_id = {c["id"]: c for c in cars}
+
+    def parent(self, car, seen):
+        p = self.by_id.get(car.get("parent") or "")
+        if p is None or p["id"] in seen:   # missing or circular parent: treat as a model
+            return None
+        seen.add(p["id"])
+        return p
+
+    def require(self, car, seen=None):
+        seen = seen or {car["id"]}
+        parent = self.parent(car, seen)
+        groups = car.get("require") or []
+        if not groups:
+            if parent:
+                groups = self.require(parent, seen)
+            elif not car.get("ids"):
+                groups = [[w] for w in car["name"].split() if not w.isdigit()]
+        if car.get("ids"):
+            groups = groups + [car["ids"]]
+        return groups
+
+    def searches(self, car, seen=None):
+        seen = seen or {car["id"]}
+        parent = self.parent(car, seen)
+        inherited = self.searches(parent, seen) if parent else []
+        own = car.get("search") or ([] if parent else [car["name"]])
+        return list(dict.fromkeys(own + self.id_searches(car, own or inherited) + inherited))
+
+    def id_searches(self, car, base=None):
+        """Searches that add the car's identifiers, e.g. '"300 SLR" ("0008/55" OR "red interior")'."""
+        if not car.get("ids"):
+            return []
+        if base is None:
+            seen = {car["id"]}
+            parent = self.parent(car, seen)
+            base = car.get("search") or (self.searches(parent, seen) if parent else [car["name"]])
+        ids = " OR ".join('"%s"' % i.replace('"', "") for i in car["ids"])
+        return ["%s (%s)" % (p, ids) for p in base]
 
 
-def research(car, known):
+def matches(item, groups):
+    text = fold(item["title"] + " " + item["summary"])
+    return all(any(rx.search(text) for rx in group) for group in groups)
+
+
+_cache = {}
+
+
+def search(phrase, via):
+    key = (phrase, via)
+    if key not in _cache:
+        try:
+            _cache[key] = parse_rss(fetch(SOURCES[via].format(q=urllib.parse.quote(phrase))), via)
+        except Exception as e:  # one dead source should not stop the run
+            print(f"  ! {via} '{phrase}': {e}", file=sys.stderr)
+            _cache[key] = []
+        time.sleep(1)
+    return _cache[key]
+
+
+def research(car, plan, known):
     """Return the car's articles with any new matches added."""
-    searches = car.get("search") or [car["name"]]
-    require = car.get("require") or [[w] for w in car["name"].split() if not w.isdigit()]
+    groups = [[rx for rx in map(word_re, g) if rx] for g in plan.require(car)]
+    groups = [g for g in groups if g]
+    # Google and Bing News search the whole article, so a result from a search that names the
+    # car's identifiers already mentions one, even when the headline doesn't. Bing web ignores
+    # quotes and OR, so its results still have to show the identifier.
+    by_text = set(plan.id_searches(car)) if car.get("ids") else set()
     hidden = {norm_url(u) for u in car.get("hidden", [])}
     seen_urls = {norm_url(a["url"]) for a in known}
     seen_titles = {norm_title(a["title"]) for a in known}
     found = list(known)
     stamp = now()
-    for phrase in searches:
-        for via, template in SOURCES.items():
-            url = template.format(q=urllib.parse.quote(phrase))
-            try:
-                items = parse_rss(fetch(url), via)
-            except Exception as e:  # one dead source should not stop the run
-                print(f"  ! {via} '{phrase}': {e}", file=sys.stderr)
-                continue
-            for item in items:
+    for phrase in plan.searches(car):
+        for via in SOURCES:
+            need = groups[:-1] if phrase in by_text and via != "Web" else groups
+            for item in search(phrase, via):
                 u, t = norm_url(item["url"]), norm_title(item["title"])
-                if u in hidden or u in seen_urls or t in seen_titles or not matches(item, require):
+                if u in hidden or u in seen_urls or t in seen_titles or not matches(item, need):
                     continue
                 seen_urls.add(u)
                 seen_titles.add(t)
-                item["first_seen"] = stamp
+                item = dict(item, first_seen=stamp)
                 if via == "Web":
                     item["date"] = None  # Bing's web date is a crawl date, not the publish date
                 if SALE_WORDS.search(item["title"] + " " + item["summary"]):
                     item["tags"] = ["sale"]
                 found.append(item)
                 print(f"  + [{via}] {item['title']}")
-            time.sleep(1)
     return found
 
 
 def main():
     cars = json.loads(CARS.read_text())["cars"]
+    plan = Plan(cars)
     data = json.loads(ARTICLES.read_text()) if ARTICLES.exists() else {"articles": {}}
     only = set(sys.argv[1:])
     ids = {c["id"] for c in cars}
@@ -147,7 +234,7 @@ def main():
         before = len(articles.get(car["id"], []))
         hidden = {norm_url(u) for u in car.get("hidden", [])}
         kept = [a for a in articles.get(car["id"], []) if norm_url(a["url"]) not in hidden]
-        articles[car["id"]] = research(car, kept)
+        articles[car["id"]] = research(car, plan, kept)
         print(f"  {len(articles[car['id']]) - before:+d} new, {len(articles[car['id']])} total")
     ARTICLES.write_text(json.dumps({"updated": now(), "articles": articles}, indent=1, ensure_ascii=False) + "\n")
 

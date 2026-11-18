@@ -84,6 +84,14 @@ dialog textarea { min-height: 70px; resize: vertical; }
 .foot { display: flex; gap: 8px; margin-top: 16px; align-items: center; }
 .foot .spacer { flex: 1; }
 .danger { background: none; border: 0; color: var(--accent); }
+details.adv { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 8px; }
+details.adv summary { cursor: pointer; font-size: 14px; color: var(--muted); }
+.crumb { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+.crumb a { color: var(--accent); text-decoration: none; }
+.subs { margin: 0 0 22px; }
+.sub { display: flex; gap: 10px; align-items: center; width: 100%; text-align: left; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 6px; }
+.sub b { flex: 1; font-weight: 600; }
+.sub .ids { font: 12px var(--mono); color: var(--muted); }
 #toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 9px 14px; border-radius: 10px; font-size: 14px; opacity: 0; transition: opacity .2s; pointer-events: none; max-width: calc(100vw - 32px); }
 #toast.on { opacity: 1; }
 @media (max-width: 520px) {
@@ -127,12 +135,19 @@ dialog textarea { min-height: 70px; resize: vertical; }
       </select></label></div>
       <div><label>Last known whereabouts<input name="location" placeholder="City, collection, owner"></label></div>
     </div>
+    <label>Part of<small>Pick the model when this is one specific car, like one chassis of the 300 SLR.</small>
+      <select name="parent"></select></label>
+    <label id="ids-label">Identifiers<small>What tells this car apart: chassis number, nickname, race number. One per line. An article must mention at least one.</small>
+      <textarea name="ids" placeholder="0008/55&#10;Red&#10;Rotes"></textarea></label>
     <label>Photo link<input name="photo" type="url" placeholder="https://… (optional)"></label>
-    <label>Notes<textarea name="notes" placeholder="Chassis number, history, why it's on the list"></textarea></label>
-    <label>Search for<small>One search per line. Quotes match the exact phrase. Leave blank to search the car's name.</small>
-      <textarea name="search" placeholder='"X5 Le Mans"&#10;BMW X5 V12 Le Mans prototype'></textarea></label>
-    <label>Must mention<small>One line per must-have. Commas mean "any of these". An article has to match every line, so the X5 Le Mans needs "X5" and one of "Le Mans, LMR, V12". Leave blank to use the name's words.</small>
-      <textarea name="require" placeholder="X5&#10;Le Mans, LMR, V12"></textarea></label>
+    <label>Notes<textarea name="notes" placeholder="History, owners, why it's on the list"></textarea></label>
+    <details class="adv" id="adv">
+      <summary>Search settings</summary>
+      <label>Search for<small>One search per line. Quotes match the exact phrase. Blank: the car's name, or for a specific car, the model's searches plus its identifiers.</small>
+        <textarea name="search" placeholder='"X5 Le Mans"&#10;BMW X5 V12 Le Mans prototype'></textarea></label>
+      <label>Must mention<small>One line per must-have, commas mean "any of these", and an article has to match every line. Whole words, accents ignored. Blank: the model's lines (or the name's words).</small>
+        <textarea name="require" placeholder="X5&#10;Le Mans, LMR, V12"></textarea></label>
+    </details>
     <div class="foot">
       <button type="button" class="danger" id="btn-delete" hidden>Delete car</button>
       <span class="spacer"></span>
@@ -271,7 +286,20 @@ const hostOf = u => { try { return new URL(u).hostname.replace(/^www\./, ""); } 
 const when = a => a.date || (a.first_seen || "").slice(0, 10);
 const seen = () => store.get("seen", {});
 const isNew = (car, a) => { const s = seen()[car.id]; return !s || (a.first_seen || "") > s; };
-const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const slug = s => s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const byId = id => state.cars.find(x => x.id === id);
+const kids = id => state.cars.filter(x => x.parent === id && byId(x.parent));
+// the car and every car under it (guards against a car being its own ancestor)
+function family(id, out = new Set()) {
+  if (out.has(id)) return out;
+  out.add(id); kids(id).forEach(k => family(k.id, out)); return out;
+}
+function ancestors(c) {
+  const out = [], seen = new Set([c.id]);
+  for (let p = byId(c.parent); p && !seen.has(p.id); p = byId(p.parent)) { seen.add(p.id); out.unshift(p); }
+  return out;
+}
+const isTop = c => !byId(c.parent) || ancestors(c).length === 0;
 
 // ---------- render ----------
 function render() {
@@ -281,13 +309,18 @@ function render() {
   b.hidden = gh.ready();
   b.innerHTML = `Read-only on this device. <button class="link-btn" onclick="openSettings()">Connect GitHub</button> to add and edit cars.`;
 
+  // the grid shows models and stand-alone cars; a search also finds specific cars
   const q = $("#filter").value.toLowerCase();
-  const cars = state.cars.filter(c => !q || `${c.year} ${c.name} ${c.location} ${c.status} ${c.notes}`.toLowerCase().includes(q));
+  const cars = state.cars.filter(c => q
+    ? `${c.year} ${c.name} ${c.location} ${c.status} ${c.notes} ${(c.ids || []).join(" ")}`.toLowerCase().includes(q)
+    : isTop(c));
   $("#cards").innerHTML = cars.length ? cars.map(c => {
+    const fam = [...family(c.id)].map(byId);
     const t = timeline(c);
-    const fresh = t.filter(a => isNew(c, a)).length;
+    const fresh = fam.reduce((n, f) => n + timeline(f).filter(a => isNew(f, a)).length, 0);
     const last = t.map(when).filter(Boolean).sort().pop();
-    const sale = t.some(a => isNew(c, a) && (a.tags || []).includes("sale"));
+    const sale = fam.some(f => timeline(f).some(a => isNew(f, a) && (a.tags || []).includes("sale")));
+    const nKids = fam.length - 1;
     return `<button class="card" data-id="${esc(c.id)}">
       <div class="ph" style="${c.photo ? `background-image:url('${esc(c.photo)}')` : ""}">${c.photo ? "" : esc((c.maker || c.name).slice(0, 3).toUpperCase())}</div>
       <div class="body">
@@ -295,6 +328,7 @@ function render() {
         <h2>${esc(c.name)}</h2>
         <div class="row">
           <span class="chip">${esc(c.status || "Unknown")}</span>
+          ${nKids ? `<span class="chip">${nKids} specific car${nKids > 1 ? "s" : ""}</span>` : ""}
           ${fresh ? `<span class="chip new">${fresh} new</span>` : ""}
           ${sale ? `<span class="chip sale">Sale mention</span>` : ""}
         </div>
@@ -322,11 +356,14 @@ function renderDetail() {
         <div class="src">${isNew(c, a) ? `<span class="chip new">New</span>` : ""}${tags}<span>${esc(a.source)}</span><span>· ${esc(a.via)}</span></div></div>
       <button class="x" title="Not about this car, hide it" data-hide="${esc(a.url)}">×</button></div>`;
   }
+  const up = ancestors(c), subs = kids(c.id);
   $("#detail-body").innerHTML = `
+    ${up.length ? `<div class="crumb">Part of ${up.map(p => `<a href="#${esc(p.id)}">${esc(p.name)}</a>`).join(" › ")}</div>` : ""}
     ${c.photo ? `<div class="hero" style="background-image:url('${esc(c.photo)}')"></div>` : ""}
     <div class="year">${esc(c.year)}${c.maker ? " · " + esc(c.maker) : ""}</div>
     <h2>${esc(c.name)}</h2>
     <dl class="facts">
+      ${(c.ids || []).length ? `<dt>Identifiers</dt><dd>${c.ids.map(esc).join(" · ")}</dd>` : ""}
       <dt>Status</dt><dd>${esc(c.status || "Unknown")}</dd>
       <dt>Whereabouts</dt><dd>${esc(c.location || "Unknown")}</dd>
       <dt>Added</dt><dd>${esc(c.added || "")}</dd>
@@ -336,11 +373,20 @@ function renderDetail() {
       <button class="icon-btn" id="d-edit">Edit</button>
       <button class="icon-btn" id="d-research">Research now</button>
       <button class="icon-btn" id="d-link">+ Link</button>
+      <button class="icon-btn" id="d-sub">+ Specific car</button>
     </div>
+    ${subs.length ? `<div class="tl-head"><h3>Specific cars (${subs.length})</h3></div><div class="subs" style="margin-top:10px">
+      ${subs.map(s => {
+        const n = timeline(s).filter(a => isNew(s, a)).length;
+        return `<button class="sub" data-open="${esc(s.id)}"><b>${esc(s.name)}</b>
+          <span class="ids">${esc((s.ids || []).slice(0, 2).join(" · "))}</span>
+          ${n ? `<span class="chip new">${n} new</span>` : ""}<span>›</span></button>`;
+      }).join("")}</div>` : ""}
     <div class="tl-head"><h3>On the internet (${items.length})</h3>
       <button class="link-btn" id="d-sort">${oldestFirst ? "Oldest first ↓" : "Newest first ↑"}</button></div>
     ${rows || `<p class="empty">Nothing found yet. The next research run will look.</p>`}`;
   $("#d-edit").onclick = () => openCarForm(c);
+  $("#d-sub").onclick = () => openCarForm(null, c.id);
   $("#d-link").onclick = () => { $("#link-form").reset(); $("#dlg-link").showModal(); };
   $("#d-sort").onclick = () => { store.set("oldestFirst", !oldestFirst); renderDetail(); };
   $("#d-research").onclick = async () => {
@@ -363,18 +409,39 @@ function closeDetail() {
 
 // ---------- forms ----------
 let editing = null;
-function openCarForm(c) {
+function openCarForm(c, parentId) {
   editing = c || null;
   const f = $("#car-form"); f.reset();
-  $("#car-form-title").textContent = c ? "Edit car" : "Add a car";
+  $("#car-form-title").textContent = c ? "Edit car" : parentId ? `Add a specific ${byId(parentId).name}` : "Add a car";
   $("#btn-delete").hidden = !c;
+  // a car can't be part of itself or of a car under it
+  const banned = c ? family(c.id) : new Set();
+  const opts = [];
+  (function walk(list, depth) {
+    for (const x of list) {
+      if (banned.has(x.id)) continue;
+      opts.push(`<option value="${esc(x.id)}">${" ".repeat(depth)}${esc(x.name)}</option>`);
+      walk(kids(x.id), depth + 1);
+    }
+  })(state.cars.filter(isTop), 0);
+  f.elements.parent.innerHTML = `<option value="">Nothing, this is a model or a one-off</option>` + opts.join("");
+  f.elements.parent.value = (c ? c.parent : parentId) || "";
   if (c) {
     for (const k of ["name", "year", "status", "location", "photo", "notes"]) f.elements[k].value = c[k] || "";
+    f.elements.ids.value = (c.ids || []).join("\n");
     f.elements.search.value = (c.search || []).join("\n");
     f.elements.require.value = (c.require || []).map(g => g.join(", ")).join("\n");
   }
+  syncForm();
   $("#dlg-car").showModal();
 }
+// specific cars need identifiers; models and one-offs need their search settings
+function syncForm() {
+  const f = $("#car-form").elements, sub = !!f.parent.value;
+  $("#ids-label").hidden = !sub;
+  $("#adv").open = !sub || !!(f.search.value.trim() || f.require.value.trim());
+}
+$("#car-form").elements.parent.onchange = syncForm;
 
 $("#car-form").addEventListener("submit", async e => {
   e.preventDefault();
@@ -384,8 +451,10 @@ $("#car-form").addEventListener("submit", async e => {
     location: f.location.value.trim(), photo: f.photo.value.trim(), notes: f.notes.value.trim(),
     search: f.search.value.split("\n").map(s => s.trim()).filter(Boolean),
     require: f.require.value.split("\n").map(l => l.split(",").map(s => s.trim()).filter(Boolean)).filter(g => g.length),
+    parent: f.parent.value,
+    ids: f.parent.value ? f.ids.value.split("\n").map(s => s.trim()).filter(Boolean) : [],
   };
-  fields.maker = fields.name.split(" ")[0];
+  fields.maker = fields.parent ? (byId(fields.parent).maker || fields.name.split(" ")[0]) : fields.name.split(" ")[0];
   try {
     if (editing) {
       const id = editing.id;
@@ -405,8 +474,11 @@ $("#car-form").addEventListener("submit", async e => {
 $("#car-cancel").onclick = () => $("#dlg-car").close();
 $("#btn-delete").onclick = async () => {
   if (!editing || !confirm(`Delete ${editing.name} and its history?`)) return;
-  const id = editing.id;
-  try { await mutate(`Delete ${editing.name}`, cars => cars.splice(cars.findIndex(x => x.id === id), 1));
+  const id = editing.id, up = editing.parent || "";
+  try { await mutate(`Delete ${editing.name}`, cars => {
+      cars.splice(cars.findIndex(x => x.id === id), 1);
+      cars.forEach(x => { if (x.parent === id) x.parent = up; });   // its specific cars move up a level
+    });
     $("#dlg-car").close(); closeDetail(); } catch (err) { toast(err.message); }
 };
 
@@ -420,6 +492,8 @@ $("#link-form").addEventListener("submit", async e => {
 $("#link-cancel").onclick = () => $("#dlg-link").close();
 
 $("#detail-body").addEventListener("click", async e => {
+  const sub = e.target.closest("[data-open]");
+  if (sub) { openDetail(sub.dataset.open); return; }
   const url = e.target.dataset?.hide;
   if (!url) return;
   const id = state.open;

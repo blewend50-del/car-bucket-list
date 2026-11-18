@@ -28,9 +28,30 @@
    "added": "2026-11-18"
   },
   {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [
+    "\"300 SLR\""
+   ],
+   "require": [
+    [
+     "300 SLR"
+    ]
+   ],
+   "id": "1955-mercedes-benz-300-slr",
+   "name": "Mercedes-Benz 300 SLR",
+   "year": "1955",
+   "status": "Collection",
+   "location": "Various",
+   "notes": "Sports-racing car of the 1955 season. 9 built, 8 survive. Add each surviving car with + Specific car, using its chassis number, race number or nickname as identifiers."
+  },
+  {
    "id": "mercedes-benz-300-slr-uhlenhaut-coup",
    "name": "Mercedes-Benz 300 SLR Uhlenhaut Coupé",
-   "year": "",
+   "year": "1955",
    "status": "Collection",
    "location": "One at the Mercedes-Benz Museum, Stuttgart. The other sold in 2022 for €135M to a private collector.",
    "photo": "https://www.thesupercarblog.com/wp-content/uploads/2022/05/Mercedes-Benz-300-SLR-Silver-Arrow.jpg",
@@ -52,7 +73,52 @@
    "maker": "Mercedes-Benz",
    "links": [],
    "hidden": [],
-   "added": "2026-11-18"
+   "added": "2026-11-18",
+   "parent": "1955-mercedes-benz-300-slr"
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "1955-uhlenhaut-coupe-red",
+   "parent": "mercedes-benz-300-slr-uhlenhaut-coup",
+   "name": "Uhlenhaut Coupé \"Red\"",
+   "year": "1955",
+   "ids": [
+    "red interior",
+    "rote",
+    "rotes",
+    "0008/55"
+   ],
+   "status": "Private owner",
+   "location": "Private collector (sold May 2022, RM Sotheby's private auction, €135M)",
+   "notes": "Chassis 8, red interior."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "1955-uhlenhaut-coupe-blue",
+   "parent": "mercedes-benz-300-slr-uhlenhaut-coup",
+   "name": "Uhlenhaut Coupé \"Blue\"",
+   "year": "1955",
+   "ids": [
+    "blue interior",
+    "blaue",
+    "blaues",
+    "0007/55"
+   ],
+   "status": "Museum",
+   "location": "Mercedes-Benz Museum, Stuttgart",
+   "notes": "Chassis 7, blue interior."
   }
  ]
 }
