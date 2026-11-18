@@ -28,7 +28,7 @@
    "added": "2026-11-18"
   },
   {
-   "photo": "",
+   "photo": "https://www.thesupercarblog.com/wp-content/uploads/2022/05/Mercedes-Benz-300-SLR-Silver-Arrow.jpg",
    "links": [],
    "hidden": [],
    "added": "2026-11-18",
@@ -46,7 +46,9 @@
    "year": "1955",
    "status": "Collection",
    "location": "Various",
-   "notes": "Sports-racing car of the 1955 season. 9 built, 8 survive. Add each surviving car with + Specific car, using its chassis number, race number or nickname as identifiers."
+   "notes": "Sports-racing car of the 1955 season. 9 built, 8 survive. Add each surviving car with + Specific car, using its chassis number, race number or nickname as identifiers.",
+   "parent": "",
+   "ids": []
   },
   {
    "id": "mercedes-benz-300-slr-uhlenhaut-coup",
