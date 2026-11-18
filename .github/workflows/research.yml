@@ -19,6 +19,8 @@ concurrency:
 jobs:
   research:
     runs-on: ubuntu-latest
+    env:
+      ALERTS_FILE: /tmp/car-alerts.json   # fresh sale/auction finds, emailed after they're saved
     steps:
       # A run that waited behind another starts from the latest main, not the commit that triggered it,
       # so it sees the finds the earlier run saved.
@@ -47,3 +49,9 @@ jobs:
             git commit -m "research $(date -u +%F)"
           fi
           git push
+      - name: Email sale alerts
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: python notify.py "$ALERTS_FILE"

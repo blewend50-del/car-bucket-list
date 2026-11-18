@@ -21,6 +21,7 @@ library only.
 """
 import html
 import json
+import os
 import re
 import sys
 import time
@@ -29,7 +30,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
@@ -48,6 +49,7 @@ SALE_WORDS = re.compile(
     r"sotheby|bonhams|gooding|mecum|barrett|artcurial|broad arrow|listing|hammer|bid\b",
     re.I,
 )
+ALERT_DAYS = 14   # sale news older than this is history, not an alert
 TAG_RE = re.compile(r"<[^>]+>")
 SEP = r"[\s\-–—/.]*"   # "0008/55", "0008-55" and "0008 55" are the same chassis
 
@@ -136,6 +138,12 @@ class Plan:
             return None
         seen.add(p["id"])
         return p
+
+    def depth(self, car):
+        seen, n = {car["id"]}, 0
+        while (car := self.parent(car, seen)):
+            n += 1
+        return n
 
     def require(self, car, seen=None):
         seen = seen or {car["id"]}
@@ -239,6 +247,9 @@ def main():
     only = set(sys.argv[1:])
     ids = {c["id"] for c in cars}
     articles = {k: v for k, v in data["articles"].items() if k in ids}
+    by_id = {c["id"]: c for c in cars}
+    recent = (datetime.now(timezone.utc) - timedelta(days=ALERT_DAYS)).date().isoformat()
+    alerts = {}
     for car in cars:
         if only and car["id"] not in only:
             continue
@@ -248,7 +259,20 @@ def main():
         kept = [a for a in articles.get(car["id"], []) if norm_url(a["url"]) not in hidden]
         articles[car["id"]] = research(car, plan, kept)
         print(f"  {len(articles[car['id']]) - before:+d} new, {len(articles[car['id']])} total")
+        parent = by_id.get(car.get("parent") or "")
+        for a in articles[car["id"]][len(kept):]:
+            # only fresh sale news: a newly added car's first search shouldn't email decades of old sales
+            if "sale" in a.get("tags", []) and (a.get("date") or "") >= recent:
+                alert = {"car_id": car["id"], "car": car["name"], "model": parent["name"] if parent else "",
+                         "title": a["title"], "url": a["url"], "source": a["source"], "date": a["date"]}
+                # an article found for several cars of one family is listed once, under the most general one
+                u, depth = norm_url(a["url"]), plan.depth(car)
+                if u not in alerts or depth < alerts[u][0]:
+                    alerts[u] = (depth, alert)
     ARTICLES.write_text(json.dumps({"updated": now(), "articles": articles}, indent=1, ensure_ascii=False) + "\n")
+    if os.environ.get("ALERTS_FILE"):
+        Path(os.environ["ALERTS_FILE"]).write_text(json.dumps([a for _, a in alerts.values()], indent=1, ensure_ascii=False))
+        print(f"{len(alerts)} sale alert(s)")
 
 
 if __name__ == "__main__":
