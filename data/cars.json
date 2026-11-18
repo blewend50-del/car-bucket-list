@@ -1616,6 +1616,161 @@
    "status": "Collection",
    "location": "Porsche factory collection, Stuttgart",
    "notes": "The only road version of the 1998 GT1-98, built to homologate the race car. Smaller wheels, fuller interior, nearly 400 lb heavier than the racer. Never sold; Porsche shows it occasionally, e.g. at Goodwood. Registered BB-GT198 (Stuttcars, 2018)."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [
+    "\"Mercedes C111\"",
+    "\"Mercedes-Benz C111\"",
+    "\"C 111\" Mercedes"
+   ],
+   "require": [
+    [
+     "C111",
+     "C 111"
+    ]
+   ],
+   "id": "1969-mercedes-benz-c111",
+   "name": "Mercedes-Benz C111",
+   "year": "1969",
+   "status": "Collection",
+   "location": "Mercedes-Benz (13 cars); one C111-II at auction February 2027",
+   "notes": "Experimental cars, never sold, used 1969-1979 to test Wankel rotary engines, then diesel and turbo engines, with speed records at Nardò, Italy. Customers famously sent Mercedes blank cheques for one.\n\nWikipedia: 16 built (13 first- and second-generation Wankel cars, 2 C111-III, 1 C111-IV); other sources say 12 or 17. The first plastic-bodied 1969 prototype no longer exists (Secret Classics). Mercedes said in November 2026 that 17 were built: one was crash-tested and three dismantled in the 1970s, leaving 13 in its collection, none ever sold until C111-II \"Car 33\" was put up for auction (RM Sotheby's, Louvre, Paris, 3 February 2027). Mercedes has contractually committed not to sell another C111 for 25 years.\n\nNo source identifies individual cars by chassis or plate, so they're tracked by version below. Only the C111-IV is a single car."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "c111-i",
+   "parent": "1969-mercedes-benz-c111",
+   "name": "C111-I",
+   "year": "1969",
+   "ids": [
+    "C111-I",
+    "C 111-I"
+   ],
+   "status": "Collection",
+   "location": "Mercedes-Benz",
+   "notes": "6 built (Supercar Nostalgia; Secret Classics says 7). Three-rotor Wankel (M950F), about 275-280 hp, about 162 mph. First prototypes metallic white, then \"Weissherbst\" orange. Press demos at Hockenheim 1-5 September 1969, public debut at Frankfurt that month. One was built with a 250 bhp M117 V8 for comparison. Secret Classics: only two survive, one restyled to look like a C111-II (shown at Techno Classica, April 2019)."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "c111-ii",
+   "parent": "1969-mercedes-benz-c111",
+   "name": "C111-II",
+   "year": "1970",
+   "ids": [
+    "C111-II",
+    "C 111-II"
+   ],
+   "status": "Collection",
+   "location": "Mercedes-Benz",
+   "notes": "7 built (Supercar Nostalgia; Secret Classics says Mercedes owns \"all six\"). Four-rotor Wankel, about 350 hp, 186 mph, 0-62 mph in 4.8 s. Shown at Geneva, March 1970. One had a 300 bhp M117 V8 and one an automatic gearbox. Orange and black check interior. One is shown at the Mercedes-Benz Museum, Stuttgart. \"Car 33\" (below) is going to auction in February 2027, the first C111 ever sold."
+  },
+  {
+   "id": "c111-ii-car-33",
+   "parent": "c111-ii",
+   "name": "C111-II \"Car 33\"",
+   "year": "1970",
+   "maker": "Mercedes-Benz",
+   "search": [
+    "\"C 111\" auction",
+    "\"C111\" auction",
+    "\"C 111-II\" Louvre"
+   ],
+   "require": [
+    [
+     "C111",
+     "C 111"
+    ]
+   ],
+   "ids": [
+    "Car 33",
+    "Wagen 33",
+    "S-Y 6200",
+    "Louvre"
+   ],
+   "status": "For sale",
+   "location": "Mercedes-Benz Museum, Stuttgart; RM Sotheby's auction at the Louvre, Paris, 3 February 2027",
+   "notes": "The first C111 Mercedes has ever sold. 1970 C111-II, orange, gull-wing doors, four-rotor Wankel (M950), 350 PS, up to 300 km/h; plate S-Y 6200. Shown in the museum foyer from 2006; taken out in 2024 and made roadworthy at the Classic Center in Fellbach, now said to be the only running four-rotor C111 (the ABS no longer works). Pebble Beach Concours, August 2024; photo shoot at Bosch's Boxberg track, autumn 2024. Comes with its removable luggage tray, matching luggage and two wheel sets.\n\nAuction announced 17-18 November 2026: RM Sotheby's, Louvre, Paris, 3 February 2027. No published estimate; Mercedes aims for \"a significant double-digit million amount\" to fund the museum's expansion (\"Museum 2.0\"). Mercedes committed not to sell another C111 for 25 years. Sources: tuningblog.eu, MarketScreener (Nov 2026).",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18"
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "c111-iid",
+   "parent": "1969-mercedes-benz-c111",
+   "name": "C111-IID (diesel)",
+   "year": "1976",
+   "ids": [
+    "C111-II D",
+    "C 111-II D"
+   ],
+   "status": "Collection",
+   "location": "Mercedes-Benz",
+   "notes": "A C111-II converted to a 3.0 L turbocharged, intercooled OM617 five-cylinder diesel, about 190 hp; pop-up headlights and mirrors removed. Nardò, 12 June 1976: 16 world records in a 64-hour run with four factory drivers, averaging over 155 mph."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "c111-iii",
+   "parent": "1969-mercedes-benz-c111",
+   "name": "C111-III",
+   "year": "1978",
+   "ids": [
+    "C111-III",
+    "C 111-III"
+   ],
+   "status": "Collection",
+   "location": "Mercedes-Benz",
+   "notes": "2 built (a record car and a reserve). Turbo-diesel OM617, about 228-230 hp, drag coefficient about 0.18-0.195, silver. Nardò, April 1978: 9 world records in 12 hours, about 196-200 mph average, drivers Paul Frère, Rico Steinmann, Hans Liebold and Guido Moch. On 30 April the first car burst a tyre and was damaged; the reserve car carried on. One C111-III became the C111-IV."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Mercedes-Benz",
+   "search": [],
+   "require": [],
+   "id": "c111-iv",
+   "parent": "1969-mercedes-benz-c111",
+   "name": "C111-IV",
+   "year": "1979",
+   "ids": [
+    "C111-IV",
+    "C 111-IV"
+   ],
+   "status": "Collection",
+   "location": "Mercedes-Benz",
+   "notes": "One car, rebuilt from a C111-III. Twin-turbo M117 V8 (4.5 L, enlarged to 4.8 L), about 500 hp, big front spoiler and twin rear fins. Nardò, 5 May 1979: closed-circuit world record of 403.978 km/h (251 mph), driven by Hans Liebold (Wikipedia gives 403.78 km/h)."
   }
  ]
 }
