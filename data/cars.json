@@ -410,6 +410,158 @@
    "status": "Private owner",
    "location": "Brunei Royal Family collection",
    "notes": "Historic Orange. Registered BM2208 in Brunei. Nominal mileage since new (Supercar Nostalgia, April 2025)."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Jaguar",
+   "search": [
+    "\"XJ220 S\"",
+    "\"XJ220S\"",
+    "\"XJ220 S\" TWR"
+   ],
+   "require": [
+    [
+     "XJ220 S"
+    ]
+   ],
+   "id": "1993-jaguar-xj220-s",
+   "name": "Jaguar XJ220 S",
+   "year": "1993",
+   "status": "Private owner",
+   "location": "Private collections; last known sale London 2022",
+   "notes": "TWR's lightweight road version of the XJ220: carbon bodywork except the doors, fixed perspex-covered headlights, front splitter, wider sills, adjustable rear wing, Kevlar seats, no stereo or air conditioning. 3.5 L twin-turbo V6, 680 hp (standard XJ220: 542 hp), about 1,050-1,080 kg, 0-60 mph in 3.3 s, 228 mph. Shown at the 1993 Autosport show.\n\nHow many: sources say 5 (HotCars, RM Sotheby's 2022) or 6 (RM Sotheby's 2012: five standard and one modified; Jaguar Enthusiasts Club; Supercars.net). Five chassis are named: 220779, 220784, 220793, 220802, 220803. The sixth, if it exists, is unidentified. 220801 is sometimes mentioned, but HotCars calls it a one-off TWR racer, not an S.\n\nThe XJ220 C race cars and the standard XJ220 are not tracked here."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Jaguar",
+   "search": [],
+   "require": [],
+   "id": "xj220-s-220779",
+   "parent": "1993-jaguar-xj220-s",
+   "year": "1993",
+   "ids": [
+    "220779",
+    "chassis 779",
+    "Outrageous Orange"
+   ],
+   "status": "Private owner",
+   "location": "Unknown buyer, RM Sotheby's London 2022",
+   "notes": "The only orange XJ220 S (Outrageous Orange). Completed 21 April 1993, left-hand drive. Believed kept by TWR until sold to a Belgian collector in February 1998; to the USA November 1999 (Keuylian Motors via Michael Sheehan's European Auto Sales), sold again that month; via Ferraris-Online 2007, in California until 2012; Jasbir Dhillon 2012; shown at The Quail 2015; Gran Turismo Collection 2018. Sold for £933,125 at RM Sotheby's London 2022 (Lot 121) with 4,822 km.",
+   "name": "XJ220 S 220779 \"Orange\""
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Jaguar",
+   "search": [],
+   "require": [],
+   "id": "xj220-s-220784",
+   "parent": "1993-jaguar-xj220-s",
+   "year": "1993",
+   "ids": [
+    "220784",
+    "chassis 784"
+   ],
+   "status": "Private owner",
+   "location": "Unknown; sold at RM Sotheby's Arizona 2012",
+   "notes": "Imported to California in silver; later matte black, then repainted Lamborghini Reventon Gray. TWR titanium exhaust, Infiniti projector headlights, refurbished magnesium wheels; shown at SEMA. Said to be the only XJ220 S with a US DOT/EPA certificate. Sold for $230,000 at RM Sotheby's Arizona 2012 (Lot 127).",
+   "name": "XJ220 S 220784"
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Jaguar",
+   "search": [],
+   "require": [],
+   "id": "xj220-s-220793",
+   "parent": "1993-jaguar-xj220-s",
+   "year": "1993",
+   "ids": [
+    "220793",
+    "chassis 793"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Red, per HotCars (2023). No other history found.",
+   "name": "XJ220 S 220793 \"Red\""
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Jaguar",
+   "search": [],
+   "require": [],
+   "id": "xj220-s-220802",
+   "parent": "1993-jaguar-xj220-s",
+   "year": "1993",
+   "ids": [
+    "220802",
+    "chassis 802"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Green, per HotCars (2023). No other history found.",
+   "name": "XJ220 S 220802 \"Green\""
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Jaguar",
+   "search": [],
+   "require": [],
+   "id": "xj220-s-220803",
+   "parent": "1993-jaguar-xj220-s",
+   "year": "1993",
+   "ids": [
+    "220803",
+    "chassis 803"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "Yellow, per HotCars (2023). No other history found.",
+   "name": "XJ220 S 220803 \"Yellow\""
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Jaguar",
+   "search": [
+    "\"XJ220\" concept 1988",
+    "\"XJ220\" prototype V12",
+    "\"Saturday Club\" Jaguar XJ220"
+   ],
+   "require": [
+    [
+     "XJ220"
+    ],
+    [
+     "concept",
+     "prototype",
+     "Saturday Club"
+    ]
+   ],
+   "id": "1988-jaguar-xj220-concept",
+   "name": "Jaguar XJ220 Concept",
+   "year": "1988",
+   "status": "Collection",
+   "location": "Jaguar Daimler Heritage Trust (inventory 95/J.50); photographed at the British Motor Museum, Gaydon (current display unconfirmed)",
+   "notes": "The one-off original XJ220. Idea by chief engineer Jim Randle (December 1984), designed by Keith Helfet, built by \"the Saturday Club\": about a dozen Jaguar engineers and designers working in their own time, helped by about forty suppliers. 6.2 L quad-cam V12, prototype four-wheel drive, Group C-based chassis, aluminium body. Unveiled by Sir John Egan at the Birmingham Motor Show (NEC), 18 October 1988. The production car (281 built 1992-1994) switched to a twin-turbo V6 and rear-wheel drive. Not road registered."
   }
  ]
 }
