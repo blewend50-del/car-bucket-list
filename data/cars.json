@@ -263,6 +263,151 @@
    "status": "Museum",
    "location": "Mercedes-Benz Museum, Stuttgart",
    "notes": "Chassis 7, blue interior."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "McLaren",
+   "search": [
+    "\"McLaren F1 LM\"",
+    "\"F1 LM\" McLaren"
+   ],
+   "require": [
+    [
+     "McLaren"
+    ],
+    [
+     "F1 LM"
+    ]
+   ],
+   "id": "1995-mclaren-f1-lm",
+   "name": "McLaren F1 LM",
+   "year": "1995",
+   "status": "Private owner",
+   "location": "Brunei Royal Family (3), McLaren (prototype), Ralph Lauren (1), Japan (1)",
+   "notes": "Six built: the XP LM prototype plus five customer cars, LM1 to LM5 (spring and summer 1996). Built to honour the five F1 GTRs that finished the 1995 Le Mans 24 Hours, including the winner, and to homologate the 1996 GTR. £680,000 plus tax new, £40,000 more than a standard F1. Unrestricted GTR BMW S70/2 6.1 L V12, 680 bhp, 1,062 kg, 225 mph.\n\nNot original LMs: standard F1s 018 and 073 were later upgraded by the factory to \"LM-specification\". 018 sold for $19,805,000 at RM Sotheby's Monterey 2019; 073 sold for about $13.75M at RM Sotheby's in 2015. Articles about them will show up here because they say \"F1 LM\"."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "McLaren",
+   "search": [],
+   "require": [],
+   "id": "mclaren-f1-xp-lm",
+   "parent": "1995-mclaren-f1-lm",
+   "name": "McLaren F1 XP LM (prototype)",
+   "year": "1995",
+   "ids": [
+    "XP LM"
+   ],
+   "status": "Collection",
+   "location": "McLaren Technology Centre, Woking",
+   "notes": "The prototype, in Historic Orange. Unveiled at Woking in December 1995 and used in the original publicity photos. Never sold. Ron Dennis reportedly promised it to Lewis Hamilton if he won three titles with McLaren; he won one (2008)."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "McLaren",
+   "search": [],
+   "require": [],
+   "id": "mclaren-f1-lm1",
+   "parent": "1995-mclaren-f1-lm",
+   "name": "McLaren F1 LM1",
+   "year": "1996",
+   "ids": [
+    "LM1",
+    "KF90"
+   ],
+   "status": "Private owner",
+   "location": "Brunei Royal Family collection",
+   "notes": "Black over pale grey with blue, yellow and pale grey stripes. Dark grey Alcantara with yellow highlights. Registered KF90 in Brunei. In the Brunei Royal collection since new (Supercar Nostalgia, June 2025)."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "McLaren",
+   "search": [],
+   "require": [],
+   "id": "mclaren-f1-lm2",
+   "parent": "1995-mclaren-f1-lm",
+   "name": "McLaren F1 LM2",
+   "year": "1996",
+   "ids": [
+    "LM2",
+    "Tsuzuki"
+   ],
+   "status": "Private owner",
+   "location": "Last named owner Yoshio Tsuzuki, ZAZ Museum, Nagoya (unconfirmed)",
+   "notes": "Historic Orange. First owner Yoshio Tsuzuki (ZENT CEO), shown at his ZAZ Museum in Nagoya next to his F1 053, GTR 13R and F1 GT 58F1GT. No recent source confirms he still owns it, and the Supercar Nostalgia LM2 page is gone (404)."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "McLaren",
+   "search": [],
+   "require": [],
+   "id": "mclaren-f1-lm3",
+   "parent": "1995-mclaren-f1-lm",
+   "name": "McLaren F1 LM3",
+   "year": "1996",
+   "ids": [
+    "LM3",
+    "1 SEN",
+    "Ralph Lauren"
+   ],
+   "status": "Private owner",
+   "location": "Ralph Lauren collection",
+   "notes": "Historic Orange, registered 1 SEN. David Morrison took delivery 12 August 1996 and drove it in the first Gumball 3000 (1999). Frank Selldorff 2003, Ralph Lauren 2004, still with him (Supercar Nostalgia, January 2024)."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "McLaren",
+   "search": [],
+   "require": [],
+   "id": "mclaren-f1-lm4",
+   "parent": "1995-mclaren-f1-lm",
+   "name": "McLaren F1 LM4",
+   "year": "1996",
+   "ids": [
+    "LM4",
+    "BP75"
+   ],
+   "status": "Private owner",
+   "location": "Brunei Royal Family collection",
+   "notes": "Black over pale grey with blue, yellow and pale grey stripes, like LM1. Registered BP75 in Brunei. Nominal mileage since new (Supercar Nostalgia, December 2024)."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "McLaren",
+   "search": [],
+   "require": [],
+   "id": "mclaren-f1-lm5",
+   "parent": "1995-mclaren-f1-lm",
+   "name": "McLaren F1 LM5",
+   "year": "1996",
+   "ids": [
+    "LM5",
+    "BM2208"
+   ],
+   "status": "Private owner",
+   "location": "Brunei Royal Family collection",
+   "notes": "Historic Orange. Registered BM2208 in Brunei. Nominal mileage since new (Supercar Nostalgia, April 2025)."
   }
  ]
 }
