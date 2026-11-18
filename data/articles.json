@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T16:11:35+00:00",
+ "updated": "2026-11-18T16:16:16+00:00",
  "articles": {
   "bmw-x5-le-mans": [
    {
@@ -948,6 +948,15 @@
     "date": "2026-10-01",
     "via": "Bing News",
     "first_seen": "2026-11-18T16:08:16+00:00"
+   },
+   {
+    "title": "World Champion Potential: The 1955 Mercedes-Benz 300 SLR - Hemmings",
+    "url": "https://www.hemmings.com/stories/a-world-champion-with-unrealized-potential-the-1955-mercedes-benz-300-slr/",
+    "source": "hemmings.com",
+    "summary": "Designed by fabled Mercedes-Benz engineer Rudolf Uhlenhaut, the 300 SLR borrowed the best designs from both the 1954 championship-winning W196 R F1 car and the 1952 300 SL sports car.",
+    "date": null,
+    "via": "Web",
+    "first_seen": "2026-11-18T16:15:46+00:00"
    }
   ],
   "1955-mercedes-benz-300-slr": [
@@ -1550,6 +1559,81 @@
     "date": "2022-05-19",
     "via": "Bing News",
     "first_seen": "2026-11-18T16:11:01+00:00"
+   },
+   {
+    "title": "Mercedes-Benz 300 SLR - Wikipedia",
+    "url": "https://en.m.wikipedia.org/wiki/Mercedes-Benz_300_SLR",
+    "source": "en.m.wikipedia.org",
+    "summary": "The Mercedes-Benz 300 SLR (W 196 S) is a two-seat sports racing car that took part in the 1955 World Sportscar Championship before a catastrophic crash and fire at Le Mans later that year ended its domination prematurely.",
+    "date": null,
+    "via": "Web",
+    "first_seen": "2026-11-18T16:15:42+00:00"
+   },
+   {
+    "title": "“The Holy Grail”: What makes the 300 SLR coupe so valuable",
+    "url": "https://insider.hagerty.com/trends/300slr-deep-dive/",
+    "source": "insider.hagerty.com",
+    "summary": "When we first heard rumor that Mercedes-Benz had parted with one of the 300 SLR coupe for a record price, we asked Karl Ludvigsen, who literally wrote the book on Silver Arrows, what made it so special.",
+    "date": null,
+    "via": "Web",
+    "first_seen": "2026-11-18T16:15:42+00:00"
+   },
+   {
+    "title": "Mercedes-Benz 300SLR, Worth Millions, Caught Casually Cruising",
+    "url": "https://www.caranddriver.com/news/a63708053/mercedes-benz-300slr-million-dollar-daily-driver/",
+    "source": "caranddriver.com",
+    "summary": "Two years ago, this car sold for nine figures ($143 million) and is likely now worth even more. And there it is, just casually cruising along between an Audi and a Volkswagen van. The 300SLR is...",
+    "date": null,
+    "via": "Web",
+    "first_seen": "2026-11-18T16:15:42+00:00",
+    "tags": [
+     "sale"
+    ]
+   },
+   {
+    "title": "World Champion Potential: The 1955 Mercedes-Benz 300 SLR - Hemmings",
+    "url": "https://www.hemmings.com/stories/a-world-champion-with-unrealized-potential-the-1955-mercedes-benz-300-slr/",
+    "source": "hemmings.com",
+    "summary": "Designed by fabled Mercedes-Benz engineer Rudolf Uhlenhaut, the 300 SLR borrowed the best designs from both the 1954 championship-winning W196 R F1 car and the 1952 300 SL sports car.",
+    "date": null,
+    "via": "Web",
+    "first_seen": "2026-11-18T16:15:42+00:00"
+   },
+   {
+    "title": "Mercedes-Benz 300SLR 722 - The most famous race car of all time?",
+    "url": "https://automedia.revsinstitute.org/mercedes-benz-300slr-722",
+    "source": "automedia.revsinstitute.org",
+    "summary": "For the October event there was a Mercedes 300 SL, a 190 SL, a 200 saloon, a 300 SLR – even Ulenhaut’s unique, personal 300 SLR Coupe for the team’s seven drivers to practice in.",
+    "date": null,
+    "via": "Web",
+    "first_seen": "2026-11-18T16:15:42+00:00"
+   },
+   {
+    "title": "The Stuff of Legend - Mercedes 300 SLR - Avants",
+    "url": "https://www.avants.com/magazine/2022/5/18/the-stuff-of-legend-mercedes-300-slr",
+    "source": "avants.com",
+    "summary": "The 1955 Mercedes 300 SLR (the SLR stands for Sport Leicht-Rennen, or Sport Light-Racing) comes cloaked in legend, with stories so big and dramatic and mythic that they nearly keep you from seeing the car itself.",
+    "date": null,
+    "via": "Web",
+    "first_seen": "2026-11-18T16:15:42+00:00"
+   },
+   {
+    "title": "$143 Million Mercedes-Benz 300SLR Is the Most Expensive Car in the World",
+    "url": "https://www.caranddriver.com/news/a40051518/mercedes-benz-300slr-world-most-expensive-car-sale/",
+    "source": "caranddriver.com",
+    "summary": "Mercedes only ever built two copies of the 300SLR, and they became known as the Uhlenhaut coupes because of their association with legendary engineer Rudolf Uhlenhaut.",
+    "date": null,
+    "via": "Web",
+    "first_seen": "2026-11-18T16:15:42+00:00"
+   },
+   {
+    "title": "M112-Powered Mercedes-Benz 300 SLR Replica 6-Speed",
+    "url": "https://bringatrailer.com/listing/mercedes-benz-300-slr-replica/",
+    "source": "bringatrailer.com",
+    "summary": "This replica of a Mercedes-Benz 300 SLR was built in Argentina and completed in 2018. It was inspired by the SLR driven by five-time Formula One World Drivers’ champion Juan Manuel Fangio in the 1955 Mille Miglia.",
+    "date": null,
+    "via": "Web",
+    "first_seen": "2026-11-18T16:15:42+00:00"
    }
   ],
   "1955-uhlenhaut-coupe-red": [
