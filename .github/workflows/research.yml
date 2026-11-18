@@ -20,7 +20,11 @@ jobs:
   research:
     runs-on: ubuntu-latest
     steps:
+      # A run that waited behind another starts from the latest main, not the commit that triggered it,
+      # so it sees the finds the earlier run saved.
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -32,5 +36,14 @@ jobs:
           git add data/articles.json
           git diff --cached --quiet && exit 0
           git commit -m "research $(date -u +%F)"
-          git pull --rebase origin main
+          if ! git pull --rebase origin main; then
+            # articles.json changed while we searched: search again on top of the latest copy
+            # (research only ever adds finds, so nothing is lost)
+            git rebase --abort
+            git reset --hard origin/main
+            python research.py ${{ github.event.inputs.car }}
+            git add data/articles.json
+            git diff --cached --quiet && exit 0
+            git commit -m "research $(date -u +%F)"
+          fi
           git push
