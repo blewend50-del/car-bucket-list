@@ -1,0 +1,19 @@
+{
+ "cars": [
+  {
+   "id": "bmw-x5-le-mans",
+   "name": "BMW X5 Le Mans",
+   "year": "2001",
+   "maker": "BMW",
+   "search": ["\"X5 Le Mans\"", "BMW X5 V12 Le Mans prototype"],
+   "require": [["X5"], ["Le Mans", "LMR", "V12"]],
+   "status": "Collection",
+   "location": "BMW Group Classic (factory collection)",
+   "notes": "One-off X5 with the 6.1 L V12 from the Le Mans-winning V12 LMR, about 700 hp. Lapped the Nürburgring Nordschleife in under 8 minutes with Hans-Joachim Stuck.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18"
+  }
+ ]
+}

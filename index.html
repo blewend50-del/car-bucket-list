@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Car Bucket List</title>
+<meta name="theme-color" content="#14110f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bucket List">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<style>
+:root {
+  --bg: #f4f1ec; --panel: #fffdf9; --ink: #1b1714; --muted: #6f665d; --line: #e2dbd1;
+  --accent: #c8102e; --accent-ink: #fff; --gold: #a67c00; --new: #c8102e; --chip: #ece6dc;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #14110f; --panel: #1e1a17; --ink: #f2ece4; --muted: #a39789; --line: #332c26;
+    --accent: #e8304a; --gold: #d9a520; --chip: #2a2420; }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.45 var(--sans); }
+body { padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom); min-height: 100vh; }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 48px; }
+
+header { display: flex; align-items: center; gap: 8px; padding: 18px 0 10px; }
+header h1 { font-size: 22px; letter-spacing: .02em; margin: 0; flex: 1; text-transform: uppercase; font-weight: 800; }
+header h1 span { color: var(--accent); }
+.icon-btn { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; height: 40px; min-width: 40px; padding: 0 12px; }
+.primary { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 10px; height: 40px; padding: 0 16px; font-weight: 600; }
+.meta { font: 12px var(--mono); color: var(--muted); margin-bottom: 14px; }
+.banner { background: var(--chip); border-radius: 10px; padding: 10px 12px; font-size: 14px; margin-bottom: 14px; }
+input[type=search] { width: 100%; padding: 11px 12px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 10px; font: inherit; margin-bottom: 14px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; text-align: left; padding: 0; display: flex; flex-direction: column; }
+.card .ph { aspect-ratio: 16/9; background: var(--chip) center/cover; display: grid; place-items: center; font: 700 34px var(--mono); color: var(--muted); }
+.card .body { padding: 12px 14px 14px; }
+.year { font: 600 12px var(--mono); color: var(--muted); letter-spacing: .08em; }
+.card h2 { font-size: 18px; margin: 2px 0 6px; line-height: 1.2; }
+.row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; font-size: 13px; color: var(--muted); }
+.chip { background: var(--chip); border-radius: 99px; padding: 2px 9px; font-size: 12px; color: var(--ink); }
+.chip.sale { background: var(--gold); color: #fff; }
+.chip.new { background: var(--new); color: #fff; }
+
+#detail { display: none; }
+body.show-detail #list { display: none; }
+body.show-detail #detail { display: block; }
+.back { background: none; border: 0; padding: 18px 0 8px; color: var(--muted); }
+.hero { border-radius: 14px; aspect-ratio: 16/8; background: var(--chip) center/cover; margin-bottom: 12px; }
+#detail h2 { font-size: 26px; margin: 0 0 4px; line-height: 1.15; }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 14px; margin: 12px 0; }
+.facts dt { color: var(--muted); font: 12px var(--mono); text-transform: uppercase; padding-top: 2px; }
+.facts dd { margin: 0; }
+.notes { white-space: pre-wrap; font-size: 15px; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 22px; }
+.tl-head { display: flex; align-items: baseline; gap: 10px; border-bottom: 2px solid var(--ink); padding-bottom: 6px; }
+.tl-head h3 { margin: 0; flex: 1; font-size: 15px; text-transform: uppercase; letter-spacing: .06em; }
+.link-btn { background: none; border: 0; color: var(--accent); font-size: 14px; padding: 0; }
+.yr { font: 700 13px var(--mono); color: var(--muted); padding: 14px 0 4px; }
+.art { display: grid; grid-template-columns: 86px 1fr auto; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.art .d { font: 12px var(--mono); color: var(--muted); padding-top: 2px; }
+.art a { font-weight: 600; text-decoration: none; }
+.art a:hover { text-decoration: underline; }
+.art .src { font-size: 13px; color: var(--muted); margin-top: 2px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.art .x { background: none; border: 0; color: var(--muted); font-size: 18px; line-height: 1; padding: 2px 4px; height: fit-content; }
+.empty { color: var(--muted); padding: 18px 0; }
+
+dialog { border: 0; border-radius: 16px; padding: 0; width: min(560px, calc(100vw - 24px)); background: var(--panel); color: var(--ink); }
+dialog::backdrop { background: rgba(0,0,0,.45); }
+dialog form { padding: 18px; }
+dialog h3 { margin: 0 0 12px; }
+label { display: block; font-size: 13px; color: var(--muted); margin: 10px 0 4px; }
+label small { display: block; font-size: 12px; }
+dialog input, dialog textarea, dialog select { width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); font: inherit; }
+dialog textarea { min-height: 70px; resize: vertical; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 10px; }
+.foot { display: flex; gap: 8px; margin-top: 16px; align-items: center; }
+.foot .spacer { flex: 1; }
+.danger { background: none; border: 0; color: var(--accent); }
+#toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 9px 14px; border-radius: 10px; font-size: 14px; opacity: 0; transition: opacity .2s; pointer-events: none; max-width: calc(100vw - 32px); }
+#toast.on { opacity: 1; }
+@media (max-width: 520px) {
+  .art { grid-template-columns: 1fr auto; }
+  .art .d { grid-column: 1 / -1; padding: 0; }
+  .two { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section id="list">
+    <header>
+      <h1>Car <span>Bucket</span> List</h1>
+      <button class="icon-btn" id="btn-settings" title="Settings" aria-label="Settings">⚙︎</button>
+      <button class="primary" id="btn-add">+ Car</button>
+    </header>
+    <div class="meta" id="updated"></div>
+    <div class="banner" id="banner" hidden></div>
+    <input type="search" id="filter" placeholder="Search your cars">
+    <div class="grid" id="cards"></div>
+  </section>
+
+  <section id="detail">
+    <button class="back" id="btn-back">‹ All cars</button>
+    <div id="detail-body"></div>
+  </section>
+</div>
+
+<dialog id="dlg-car">
+  <form method="dialog" id="car-form">
+    <h3 id="car-form-title">Add a car</h3>
+    <div class="two">
+      <div><label>Car<input name="name" required placeholder="BMW X5 Le Mans"></label></div>
+      <div><label>Year<input name="year" placeholder="2001"></label></div>
+    </div>
+    <div class="two">
+      <div><label>Status<select name="status">
+        <option>Unknown</option><option>Private owner</option><option>Collection</option>
+        <option>Museum</option><option>For sale</option><option>Racing</option><option>Lost / destroyed</option>
+      </select></label></div>
+      <div><label>Last known whereabouts<input name="location" placeholder="City, collection, owner"></label></div>
+    </div>
+    <label>Photo link<input name="photo" type="url" placeholder="https://… (optional)"></label>
+    <label>Notes<textarea name="notes" placeholder="Chassis number, history, why it's on the list"></textarea></label>
+    <label>Search for<small>One search per line. Quotes match the exact phrase. Leave blank to search the car's name.</small>
+      <textarea name="search" placeholder='"X5 Le Mans"&#10;BMW X5 V12 Le Mans prototype'></textarea></label>
+    <label>Must mention<small>One line per must-have. Commas mean "any of these". An article has to match every line, so the X5 Le Mans needs "X5" and one of "Le Mans, LMR, V12". Leave blank to use the name's words.</small>
+      <textarea name="require" placeholder="X5&#10;Le Mans, LMR, V12"></textarea></label>
+    <div class="foot">
+      <button type="button" class="danger" id="btn-delete" hidden>Delete car</button>
+      <span class="spacer"></span>
+      <button type="button" class="icon-btn" value="cancel" id="car-cancel">Cancel</button>
+      <button class="primary" value="save">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="dlg-link">
+  <form method="dialog" id="link-form">
+    <h3>Add a link</h3>
+    <label>Link<input name="url" type="url" required placeholder="https://"></label>
+    <label>Title<input name="title" required placeholder="What it is"></label>
+    <label>Date<input name="date" type="date"></label>
+    <div class="foot"><span class="spacer"></span>
+      <button type="button" class="icon-btn" id="link-cancel">Cancel</button>
+      <button class="primary">Add</button></div>
+  </form>
+</dialog>
+
+<dialog id="dlg-settings">
+  <form method="dialog" id="settings-form">
+    <h3>Settings</h3>
+    <p style="font-size:14px;margin:0;color:var(--muted)">To add or edit cars from this device, connect the GitHub repo that stores the list. The token stays in this browser only.</p>
+    <div class="two">
+      <div><label>GitHub user<input name="owner" placeholder="blewend50-del" autocapitalize="off"></label></div>
+      <div><label>Repo<input name="repo" placeholder="car-bucket-list" autocapitalize="off"></label></div>
+    </div>
+    <label>Access token<small>Fine-grained token, this repo only, with Contents: Read and write and Actions: Read and write.</small>
+      <input name="token" type="password" autocomplete="off"></label>
+    <div class="foot">
+      <button type="button" class="danger" id="btn-forget">Forget token</button>
+      <span class="spacer"></span>
+      <button type="button" class="icon-btn" id="settings-cancel">Cancel</button>
+      <button class="primary">Save</button></div>
+  </form>
+</dialog>
+
+<div id="toast"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+  del(k) { try { localStorage.removeItem(k); } catch {} },
+};
+const state = { cars: [], articles: {}, updated: null, open: null };
+
+function toast(msg) {
+  const t = $("#toast"); t.textContent = msg; t.classList.add("on");
+  clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("on"), 3200);
+}
+
+// ---------- GitHub ----------
+const gh = {
+  cfg() { return store.get("gh", {}); },
+  ready() { const c = this.cfg(); return !!(c.owner && c.repo && c.token); },
+  async call(path, opts = {}) {
+    const c = this.cfg();
+    const r = await fetch(`https://api.github.com/repos/${c.owner}/${c.repo}${path}`, {
+      ...opts,
+      headers: { Authorization: `Bearer ${c.token}`, Accept: "application/vnd.github+json", ...(opts.headers || {}) },
+    });
+    if (!r.ok) throw new Error(`GitHub ${r.status}: ${(await r.text()).slice(0, 120)}`);
+    return r.status === 204 ? null : r;
+  },
+  async readJSON(file) {
+    const r = await this.call(`/contents/${file}?ref=main`, { headers: { Accept: "application/vnd.github.raw+json" }, cache: "no-store" });
+    return r.json();
+  },
+  async readCars() {
+    const j = await (await this.call(`/contents/data/cars.json?ref=main`, { cache: "no-store" })).json();
+    const text = new TextDecoder().decode(Uint8Array.from(atob(j.content.replace(/\n/g, "")), c => c.charCodeAt(0)));
+    return { cars: JSON.parse(text).cars, sha: j.sha };
+  },
+  async writeCars(cars, sha, message) {
+    const bytes = new TextEncoder().encode(JSON.stringify({ cars }, null, 1) + "\n");
+    let bin = ""; bytes.forEach(b => bin += String.fromCharCode(b));
+    await this.call(`/contents/data/cars.json`, {
+      method: "PUT", body: JSON.stringify({ message, content: btoa(bin), sha, branch: "main" }),
+    });
+  },
+  async research(carId) {
+    await this.call(`/actions/workflows/research.yml/dispatches`, {
+      method: "POST", body: JSON.stringify({ ref: "main", inputs: { car: carId || "" } }),
+    });
+  },
+};
+
+// Apply a change to the latest cars.json on GitHub (re-reads first, so two devices don't clobber each other).
+async function mutate(message, fn) {
+  if (!gh.ready()) { openSettings(); toast("Connect GitHub first to make changes."); throw new Error("not connected"); }
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const { cars, sha } = await gh.readCars();
+    fn(cars);
+    try { await gh.writeCars(cars, sha, message); state.cars = cars; cache(); return; }
+    catch (e) { if (!/409|422/.test(e.message) || attempt) throw e; }
+  }
+}
+
+// ---------- data ----------
+function cache() { store.set("data", { cars: state.cars, articles: state.articles, updated: state.updated }); }
+
+async function load() {
+  const cached = store.get("data", null);
+  if (cached) { Object.assign(state, cached); render(); }
+  try {
+    let cars, art;
+    if (gh.ready()) {
+      [cars, art] = await Promise.all([gh.readCars().then(x => x.cars), gh.readJSON("data/articles.json")]);
+    } else {
+      const bust = "?t=" + Date.now();
+      [cars, art] = await Promise.all([
+        fetch("data/cars.json" + bust).then(r => r.json()).then(j => j.cars),
+        fetch("data/articles.json" + bust).then(r => r.json()),
+      ]);
+    }
+    state.cars = cars; state.articles = art.articles || {}; state.updated = art.updated;
+    cache(); render();
+  } catch (e) {
+    if (!cached) $("#cards").innerHTML = `<p class="empty">Couldn't load the list (${esc(e.message)}).</p>`;
+    else toast("Offline, showing the saved copy.");
+  }
+}
+
+function timeline(car) {
+  const hidden = new Set(car.hidden || []);
+  const found = (state.articles[car.id] || []).filter(a => !hidden.has(a.url));
+  const mine = (car.links || []).map(l => ({ ...l, source: hostOf(l.url), via: "Added by you", first_seen: l.added }));
+  return [...found, ...mine];
+}
+const hostOf = u => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } };
+const when = a => a.date || (a.first_seen || "").slice(0, 10);
+const seen = () => store.get("seen", {});
+const isNew = (car, a) => { const s = seen()[car.id]; return !s || (a.first_seen || "") > s; };
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+// ---------- render ----------
+function render() {
+  const s = state.updated ? new Date(state.updated) : null;
+  $("#updated").textContent = s ? `Last research run: ${s.toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}` : "";
+  const b = $("#banner");
+  b.hidden = gh.ready();
+  b.innerHTML = `Read-only on this device. <button class="link-btn" onclick="openSettings()">Connect GitHub</button> to add and edit cars.`;
+
+  const q = $("#filter").value.toLowerCase();
+  const cars = state.cars.filter(c => !q || `${c.year} ${c.name} ${c.location} ${c.status} ${c.notes}`.toLowerCase().includes(q));
+  $("#cards").innerHTML = cars.length ? cars.map(c => {
+    const t = timeline(c);
+    const fresh = t.filter(a => isNew(c, a)).length;
+    const last = t.map(when).filter(Boolean).sort().pop();
+    const sale = t.some(a => isNew(c, a) && (a.tags || []).includes("sale"));
+    return `<button class="card" data-id="${esc(c.id)}">
+      <div class="ph" style="${c.photo ? `background-image:url('${esc(c.photo)}')` : ""}">${c.photo ? "" : esc((c.maker || c.name).slice(0, 3).toUpperCase())}</div>
+      <div class="body">
+        <div class="year">${esc(c.year)}</div>
+        <h2>${esc(c.name)}</h2>
+        <div class="row">
+          <span class="chip">${esc(c.status || "Unknown")}</span>
+          ${fresh ? `<span class="chip new">${fresh} new</span>` : ""}
+          ${sale ? `<span class="chip sale">Sale mention</span>` : ""}
+        </div>
+        <div class="row" style="margin-top:6px">${t.length} links${last ? ` · latest ${esc(last)}` : ""}</div>
+      </div></button>`;
+  }).join("") : `<p class="empty">${state.cars.length ? "No cars match." : "No cars yet. Add your first one."}</p>`;
+
+  if (state.open) renderDetail();
+}
+
+function renderDetail() {
+  const c = state.cars.find(x => x.id === state.open);
+  if (!c) { closeDetail(); return; }
+  const oldestFirst = store.get("oldestFirst", true);
+  const items = timeline(c).sort((a, b) => (when(a) || "").localeCompare(when(b) || ""));
+  if (!oldestFirst) items.reverse();
+  let year = "", rows = "";
+  for (const a of items) {
+    const y = (when(a) || "????").slice(0, 4);
+    if (y !== year) { rows += `<div class="yr">${esc(y)}</div>`; year = y; }
+    const tags = (a.tags || []).includes("sale") ? `<span class="chip sale">Sale mention</span>` : "";
+    rows += `<div class="art">
+      <div class="d">${esc(a.date || (a.first_seen ? "found " + a.first_seen.slice(0, 10) : ""))}</div>
+      <div><a href="${esc(a.url)}" target="_blank" rel="noopener noreferrer">${esc(a.title)}</a>
+        <div class="src">${isNew(c, a) ? `<span class="chip new">New</span>` : ""}${tags}<span>${esc(a.source)}</span><span>· ${esc(a.via)}</span></div></div>
+      <button class="x" title="Not about this car, hide it" data-hide="${esc(a.url)}">×</button></div>`;
+  }
+  $("#detail-body").innerHTML = `
+    ${c.photo ? `<div class="hero" style="background-image:url('${esc(c.photo)}')"></div>` : ""}
+    <div class="year">${esc(c.year)}${c.maker ? " · " + esc(c.maker) : ""}</div>
+    <h2>${esc(c.name)}</h2>
+    <dl class="facts">
+      <dt>Status</dt><dd>${esc(c.status || "Unknown")}</dd>
+      <dt>Whereabouts</dt><dd>${esc(c.location || "Unknown")}</dd>
+      <dt>Added</dt><dd>${esc(c.added || "")}</dd>
+    </dl>
+    ${c.notes ? `<div class="notes">${esc(c.notes)}</div>` : ""}
+    <div class="actions">
+      <button class="icon-btn" id="d-edit">Edit</button>
+      <button class="icon-btn" id="d-research">Research now</button>
+      <button class="icon-btn" id="d-link">+ Link</button>
+    </div>
+    <div class="tl-head"><h3>On the internet (${items.length})</h3>
+      <button class="link-btn" id="d-sort">${oldestFirst ? "Oldest first ↓" : "Newest first ↑"}</button></div>
+    ${rows || `<p class="empty">Nothing found yet. The next research run will look.</p>`}`;
+  $("#d-edit").onclick = () => openCarForm(c);
+  $("#d-link").onclick = () => { $("#link-form").reset(); $("#dlg-link").showModal(); };
+  $("#d-sort").onclick = () => { store.set("oldestFirst", !oldestFirst); renderDetail(); };
+  $("#d-research").onclick = async () => {
+    if (!gh.ready()) { openSettings(); return; }
+    try { await gh.research(c.id); toast("Research started. Results in about 2 minutes, then pull to refresh."); }
+    catch (e) { toast(e.message); }
+  };
+}
+
+function openDetail(id) {
+  state.open = id; document.body.classList.add("show-detail");
+  renderDetail(); window.scrollTo(0, 0);
+  if (location.hash !== "#" + id) history.pushState(null, "", "#" + id);
+  // mark everything seen once the car has been opened (badges clear next time)
+  setTimeout(() => { const s = seen(); s[id] = new Date().toISOString(); store.set("seen", s); }, 1500);
+}
+function closeDetail() {
+  state.open = null; document.body.classList.remove("show-detail"); render();
+}
+
+// ---------- forms ----------
+let editing = null;
+function openCarForm(c) {
+  editing = c || null;
+  const f = $("#car-form"); f.reset();
+  $("#car-form-title").textContent = c ? "Edit car" : "Add a car";
+  $("#btn-delete").hidden = !c;
+  if (c) {
+    for (const k of ["name", "year", "status", "location", "photo", "notes"]) f.elements[k].value = c[k] || "";
+    f.elements.search.value = (c.search || []).join("\n");
+    f.elements.require.value = (c.require || []).map(g => g.join(", ")).join("\n");
+  }
+  $("#dlg-car").showModal();
+}
+
+$("#car-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target.elements;
+  const fields = {
+    name: f.name.value.trim(), year: f.year.value.trim(), status: f.status.value,
+    location: f.location.value.trim(), photo: f.photo.value.trim(), notes: f.notes.value.trim(),
+    search: f.search.value.split("\n").map(s => s.trim()).filter(Boolean),
+    require: f.require.value.split("\n").map(l => l.split(",").map(s => s.trim()).filter(Boolean)).filter(g => g.length),
+  };
+  fields.maker = fields.name.split(" ")[0];
+  try {
+    if (editing) {
+      const id = editing.id;
+      await mutate(`Edit ${fields.name}`, cars => Object.assign(cars.find(x => x.id === id), fields));
+    } else {
+      let id = slug(`${fields.year} ${fields.name}`) || "car";
+      await mutate(`Add ${fields.name}`, cars => {
+        while (cars.some(x => x.id === id)) id += "-2";
+        cars.push({ id, ...fields, links: [], hidden: [], added: new Date().toISOString().slice(0, 10) });
+      });
+      state.open = null; openDetail(id);
+      toast("Saved. The first research run starts on its own, about 2 minutes.");
+    }
+    $("#dlg-car").close(); render();
+  } catch (err) { if (err.message !== "not connected") toast(err.message); }
+});
+$("#car-cancel").onclick = () => $("#dlg-car").close();
+$("#btn-delete").onclick = async () => {
+  if (!editing || !confirm(`Delete ${editing.name} and its history?`)) return;
+  const id = editing.id;
+  try { await mutate(`Delete ${editing.name}`, cars => cars.splice(cars.findIndex(x => x.id === id), 1));
+    $("#dlg-car").close(); closeDetail(); } catch (err) { toast(err.message); }
+};
+
+$("#link-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target.elements, id = state.open;
+  const link = { url: f.url.value.trim(), title: f.title.value.trim(), date: f.date.value || null, added: new Date().toISOString() };
+  try { await mutate(`Add link`, cars => { const c = cars.find(x => x.id === id); (c.links ||= []).push(link); });
+    $("#dlg-link").close(); renderDetail(); } catch (err) { if (err.message !== "not connected") toast(err.message); }
+});
+$("#link-cancel").onclick = () => $("#dlg-link").close();
+
+$("#detail-body").addEventListener("click", async e => {
+  const url = e.target.dataset?.hide;
+  if (!url) return;
+  const id = state.open;
+  try {
+    await mutate(`Hide a link`, cars => {
+      const c = cars.find(x => x.id === id);
+      c.links = (c.links || []).filter(l => l.url !== url);
+      if (!(c.hidden ||= []).includes(url)) c.hidden.push(url);
+    });
+    renderDetail(); toast("Hidden. It won't come back.");
+  } catch (err) { if (err.message !== "not connected") toast(err.message); }
+});
+
+function openSettings() {
+  const f = $("#settings-form"), c = gh.cfg();
+  f.elements.owner.value = c.owner || "";
+  f.elements.repo.value = c.repo || "car-bucket-list";
+  f.elements.token.value = c.token || "";
+  $("#dlg-settings").showModal();
+}
+$("#settings-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target.elements;
+  store.set("gh", { owner: f.owner.value.trim(), repo: f.repo.value.trim(), token: f.token.value.trim() });
+  try { await gh.readCars(); $("#dlg-settings").close(); toast("Connected."); load(); }
+  catch (err) { toast("Couldn't connect: " + err.message); }
+});
+$("#settings-cancel").onclick = () => $("#dlg-settings").close();
+$("#btn-forget").onclick = () => { const c = gh.cfg(); delete c.token; store.set("gh", c); $("#dlg-settings").close(); render(); };
+
+// ---------- wiring ----------
+$("#btn-add").onclick = () => openCarForm(null);
+$("#btn-settings").onclick = openSettings;
+$("#btn-back").onclick = () => history.length > 1 && location.hash ? history.back() : closeDetail();
+$("#filter").oninput = render;
+$("#cards").addEventListener("click", e => { const card = e.target.closest(".card"); if (card) openDetail(card.dataset.id); });
+window.addEventListener("popstate", () => { const id = location.hash.slice(1); id ? openDetail(id) : closeDetail(); });
+document.addEventListener("visibilitychange", () => { if (!document.hidden) load(); });
+
+load().then(() => { const id = location.hash.slice(1); if (id) openDetail(id); });
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+</body>
+</html>
