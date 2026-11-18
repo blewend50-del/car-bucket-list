@@ -1137,6 +1137,483 @@
    "status": "Unknown",
    "location": "Unknown",
    "notes": "Built after production ended and not counted in the 25 (Rare Cars Only). No other history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [
+    "\"911 GT1\" Strassenversion",
+    "\"911 GT1\" Straßenversion",
+    "\"911 GT1\" road car"
+   ],
+   "require": [
+    [
+     "911 GT1"
+    ],
+    [
+     "Strassenversion",
+     "Straßenversion",
+     "Strasenversion",
+     "road car",
+     "road cars",
+     "street",
+     "road-going",
+     "road going",
+     "street-legal"
+    ]
+   ],
+   "id": "1997-porsche-911-gt1-strassenversion",
+   "name": "Porsche 911 GT1 Strassenversion",
+   "year": "1997",
+   "status": "Private owner",
+   "location": "Private collections; Porsche keeps the GT1-98 road car",
+   "notes": "Road versions of Porsche's GT1 homologation race car (the race cars aren't tracked here).\n\n1996 street prototypes with round 993-style headlights: 2 or 3 (Stuttcars and Sports Car Market say two; RM Sotheby's and Conceptcarz say chassis 001-003). 1997 production road cars with 996-style headlights: 20, chassis 004 to 022 (RM) or 023 (Conceptcarz). About $900,000 new ($912,000 per RM). 3.2 L water-cooled twin-turbo flat-six, 544 hp, about 192 mph, about 950 kg. 1998: one GT1-98 road car, built to homologate the 1998 race car, kept by Porsche.\n\nChassis 005 is the only road car with a public history. Total 911's and HotCars' pages on the model didn't load during research."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-proto-ministry",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 1996 prototype (Ministry test car)",
+   "year": "1996",
+   "ids": [
+    "Ministry of Transport"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "One of the 993-headlight street prototypes. Delivered in early 1996 to the German Federal Ministry of Transport for road-approval testing, which it passed (Stuttcars). Chassis number (001-003) not stated."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-proto-rahim",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 1996 prototype (Khalid Abdul Rahim)",
+   "year": "1996",
+   "ids": [
+    "Khalid Abdul Rahim",
+    "Bahrain"
+   ],
+   "status": "Private owner",
+   "location": "Khalid Abdul Rahim collection, Bahrain (Stuttcars, 2016-17)",
+   "notes": "One of the 993-headlight street prototypes, owned by Bahrain collector Khalid Abdul Rahim (Stuttcars 2016 and 2017). Chassis number (001-003) not stated."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-004",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 004",
+   "year": "1997",
+   "ids": [
+    "chassis 004"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-005",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 005 \"Kemper\"",
+   "year": "1997",
+   "ids": [
+    "chassis 005",
+    "WP0ZZZ99ZWS396005",
+    "Kemper",
+    "Wallace"
+   ],
+   "status": "Private owner",
+   "location": "UK (Brazilian industrialist, bought at Gooding Amelia Island 2017)",
+   "notes": "VIN WP0ZZZ99ZWS396005. Arctic Silver Metallic over black leather, air conditioning and comfort seat padding. Assembly finished January 1998; the second road car with 996-style headlights. First owner Tobias Kemper (Germany), delivered 29 May 1998 via Porsche Zentrum Munich Olympiapark, about 4,400 km. Don Wallace (Lazydays RV founder), Tampa, Florida, 2003/04; federalised under Show and Display by JK Technologies, said to be the only road GT1 legally imported to the US. Mark Wilson, Oldsmar, Florida, May 2009. Sold for $1,175,000 at RM Sotheby's Monterey 2012 (Lot 246). Manfred Freisinger, Germany, fall 2012. Back to the US 2015 (Michigan consignor). Sold for $5,665,000 at Gooding & Co. Amelia Island, 10 March 2017 (Lot 42), 7,900 km, then a record for any 911; buyer described as a Brazilian industrialist living in the UK (Sports Car Market). Probably the GT1 in the 2021 Carfection group test with CLK GTR 07/25 and a McLaren F1."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-006",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 006",
+   "year": "1997",
+   "ids": [
+    "chassis 006"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-007",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 007",
+   "year": "1997",
+   "ids": [
+    "chassis 007"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-008",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 008",
+   "year": "1997",
+   "ids": [
+    "chassis 008"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-009",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 009",
+   "year": "1997",
+   "ids": [
+    "chassis 009"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-010",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 010",
+   "year": "1997",
+   "ids": [
+    "chassis 010"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-011",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 011",
+   "year": "1997",
+   "ids": [
+    "chassis 011"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-012",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 012",
+   "year": "1997",
+   "ids": [
+    "chassis 012"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-013",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 013",
+   "year": "1997",
+   "ids": [
+    "chassis 013"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-014",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 014",
+   "year": "1997",
+   "ids": [
+    "chassis 014"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-015",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 015",
+   "year": "1997",
+   "ids": [
+    "chassis 015"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-016",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 016",
+   "year": "1997",
+   "ids": [
+    "chassis 016"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-017",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 017",
+   "year": "1997",
+   "ids": [
+    "chassis 017"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-018",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 018",
+   "year": "1997",
+   "ids": [
+    "chassis 018"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-019",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 019",
+   "year": "1997",
+   "ids": [
+    "chassis 019"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-020",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 020",
+   "year": "1997",
+   "ids": [
+    "chassis 020"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-021",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 021",
+   "year": "1997",
+   "ids": [
+    "chassis 021"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-022",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 022",
+   "year": "1997",
+   "ids": [
+    "chassis 022"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-023",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1 Strassenversion 023",
+   "year": "1997",
+   "ids": [
+    "chassis 023"
+   ],
+   "status": "Unknown",
+   "location": "Unknown",
+   "notes": "1997 production road car with 996-style headlights. No public history found. RM Sotheby's ends the range at 022, so this number is uncertain."
+  },
+  {
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-18",
+   "maker": "Porsche",
+   "search": [],
+   "require": [],
+   "id": "911-gt1-98-road-car",
+   "parent": "1997-porsche-911-gt1-strassenversion",
+   "name": "911 GT1-98 Strassenversion",
+   "year": "1998",
+   "ids": [
+    "GT1-98",
+    "GT1 '98",
+    "BB-GT198"
+   ],
+   "status": "Collection",
+   "location": "Porsche factory collection, Stuttgart",
+   "notes": "The only road version of the 1998 GT1-98, built to homologate the race car. Smaller wheels, fuller interior, nearly 400 lb heavier than the racer. Never sold; Porsche shows it occasionally, e.g. at Goodwood. Registered BB-GT198 (Stuttcars, 2018)."
   }
  ]
 }
