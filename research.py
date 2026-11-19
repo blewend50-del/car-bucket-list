@@ -49,6 +49,7 @@ SALE_WORDS = re.compile(
     r"sotheby|bonhams|gooding|mecum|barrett|artcurial|broad arrow|listing|hammer|bid\b",
     re.I,
 )
+SKIP_SITES = ("wikipedia.org", "wikiwand.com", "handwiki.org")   # encyclopedia pages and their copies, not articles
 ALERT_DAYS = 14   # sale news older than this is history, not an alert
 TAG_RE = re.compile(r"<[^>]+>")
 SEP = r"[\s\-–—/.]*"   # "0008/55", "0008-55" and "0008 55" are the same chassis
@@ -90,6 +91,11 @@ def norm_url(url):
         kv for kv in p.query.split("&") if kv and not kv.lower().startswith(("utm_", "fbclid", "ocid"))
     )
     return urllib.parse.urlunsplit((p.scheme.lower(), p.netloc.lower().removeprefix("www."), p.path.rstrip("/"), query, ""))
+
+
+def skipped(url):
+    host = urllib.parse.urlsplit(url).netloc.lower()
+    return any(host == d or host.endswith("." + d) for d in SKIP_SITES)
 
 
 def norm_title(title):
@@ -226,7 +232,7 @@ def research(car, plan, known):
             need = groups[:-1] if phrase in by_text else groups
             for item in search(phrase, via):
                 u, t = norm_url(item["url"]), norm_title(item["title"])
-                if u in hidden or u in seen_urls or t in seen_titles or not matches(item, need):
+                if skipped(item["url"]) or u in hidden or u in seen_urls or t in seen_titles or not matches(item, need):
                     continue
                 seen_urls.add(u)
                 seen_titles.add(t)
@@ -256,7 +262,7 @@ def main():
         print(car["name"])
         before = len(articles.get(car["id"], []))
         hidden = {norm_url(u) for u in car.get("hidden", [])}
-        kept = [a for a in articles.get(car["id"], []) if norm_url(a["url"]) not in hidden]
+        kept = [a for a in articles.get(car["id"], []) if norm_url(a["url"]) not in hidden and not skipped(a["url"])]
         articles[car["id"]] = research(car, plan, kept)
         print(f"  {len(articles[car['id']]) - before:+d} new, {len(articles[car['id']])} total")
         parent = by_id.get(car.get("parent") or "")

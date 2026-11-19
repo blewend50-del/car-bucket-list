@@ -1773,6 +1773,461 @@
    "status": "Collection",
    "location": "Mercedes-Benz",
    "notes": "One car, rebuilt from a C111-III. Twin-turbo M117 V8 (4.5 L, enlarged to 4.8 L), about 500 hp, big front spoiler and twin rear fins. Nardò, 5 May 1979: closed-circuit world record of 403.978 km/h (251 mph), driven by Hans Liebold (Wikipedia gives 403.78 km/h)."
+  },
+  {
+   "id": "1960-aston-martin-db4-gt-zagato",
+   "parent": "",
+   "name": "Aston Martin DB4 GT Zagato",
+   "year": "1960",
+   "maker": "Aston Martin",
+   "search": [
+    "\"DB4 GT Zagato\"",
+    "\"DB4GT Zagato\""
+   ],
+   "require": [
+    [
+     "DB4 GT",
+     "DB4GT"
+    ],
+    [
+     "Zagato"
+    ]
+   ],
+   "ids": [],
+   "status": "Private owner",
+   "location": "Private collections; 0186/R listed for Monterey 2026",
+   "notes": "Lighter, shorter DB4 GT bodied by Zagato in Milan. 3.7 L straight-six, about 314 bhp. 25 planned, 19 built 1960-63 (chassis 0176-0191, 0193, 0199, 0200): at £5,470 it cost far more than a Jaguar E-type. Drivers included Stirling Moss, Jim Clark, Innes Ireland and Roy Salvadori. Four were built to lightweight DP207/209 racing spec (0182, 0183, 0191, 0193).\n\nSanction II (built 1988-91, Aston Martin with RS Williams and Zagato): 4 cars on the unused chassis numbers 0192, 0196, 0197, 0198, each sold for over $1M. Sanction III (2000): 2 cars from spare body shells on DB4 chassis 344 and 424.\n\nNot tracked: the 19 Continuation cars (2019, Aston Martin Works), sold only as a pair with a DBS GT Zagato in the DBZ Centenary Collection.\n\nRecords: 2 VEV (0183/R) sold for £10,081,500 at Bonhams Goodwood Festival of Speed, 2018. Another DB4 GT Zagato sold for $14.3M at RM Sotheby's New York, December 2015 (chassis not confirmed). Sources: astonmartinzagato.com registry, Wikipedia, Motorsport Magazine, Top Gear, Motor1.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0176",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0176/R",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0176/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Peony Red, delivered UK. Said to be possibly the most original of the 19 (2023).",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0177",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0177/R",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0177/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Azzurro La Plata, delivered UK.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0178",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0178/L",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0178/L"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Rosso, delivered Switzerland.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0179",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0179/L",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0179/L"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Metallic grey, delivered UK.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0180",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0180/L",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0180/L"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. White, delivered Switzerland. Raced by the Kerguen team.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0181",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0181/L",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0181/L"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Light metallic green, delivered Italy. DB4-style bonnet.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0182",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0182/R \"1 VEV\"",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0182/R",
+    "1 VEV"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Aqua Verde Caliente. Built for John Ogier's Essex Racing Stable, one of the 'twin' VEV cars with 2 VEV, lightweight DP207/209 spec. Raced at Le Mans 1961 (retired).",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0183",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0183/R \"2 VEV\"",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0183/R",
+    "2 VEV"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Aqua Verde Caliente. Essex Racing Stable, ultra-lightweight DP209. Raced at Le Mans 1961 (retired); won a British Grand Prix support race in July 1961, the Zagato's first victory; driven by Jim Clark. Crashed heavily at Spa in 1962 and rebuilt to DP209 spec; returned to 1962 spec after a road accident in 1993. Sold for £10,081,500 at Bonhams, Goodwood Festival of Speed, 2018 (a British-car auction record then).",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0184",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0184/R",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0184/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Almond Green, delivered UK.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0185",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0185/R",
+   "year": "1962",
+   "maker": "Aston Martin",
+   "ids": [
+    "0185/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Deep Carriage Green, delivered UK.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0186",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0186/R",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0186/R"
+   ],
+   "status": "Auction listed",
+   "location": "Unknown",
+   "notes": "Original car. Desert White, delivered Australia. Listed for RM Sotheby's Monterey 2026 with an estimate of €10-13M (Motor1); result not yet found.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0187",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0187/L",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0187/L"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Lancia Blue, delivered Italy.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0188",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0188/L",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0188/L"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Auteuil Silver, delivered Italy. DB4-style bonnet and upright headlamps.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0189",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0189/R",
+   "year": "1962",
+   "maker": "Aston Martin",
+   "ids": [
+    "0189/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Caribbean Pearl, delivered Switzerland.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0190",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0190/L",
+   "year": "1962",
+   "maker": "Aston Martin",
+   "ids": [
+    "0190/L"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Shell Grey, delivered France. DB4-style shrouded rear lights.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0191",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0191/R",
+   "year": "1961",
+   "maker": "Aston Martin",
+   "ids": [
+    "0191/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Pearl grey, delivered UK. One of the three ultra-lightweight DP209 cars.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0193",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0193/R",
+   "year": "1962",
+   "maker": "Aston Martin",
+   "ids": [
+    "0193/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. French Racing Blue, delivered France. One of the three ultra-lightweight DP209 cars.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0199",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0199/L",
+   "year": "1960",
+   "maker": "Aston Martin",
+   "ids": [
+    "0199/L"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Mid metallic green, delivered UK.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-0200",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato 0200/R",
+   "year": "1960",
+   "maker": "Aston Martin",
+   "ids": [
+    "0200/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Original car. Midnight Blue. The first of the 19 built; shown at the 1960 Earls Court Motor Show. Raced at Le Mans 1962 by Mike Salmon, retired with a blown piston after 9 1/2 hours.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-sanction-ii-0192",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato Sanction II 0192/R",
+   "year": "1991",
+   "maker": "Aston Martin",
+   "ids": [
+    "0192/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Sanction II: one of four built 1988-91 on unused original chassis numbers; RS Williams chassis, Zagato body. R.S.W. Green when new.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-sanction-ii-0196",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato Sanction II 0196/R",
+   "year": "1991",
+   "maker": "Aston Martin",
+   "ids": [
+    "0196/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Sanction II: one of four built 1988-91 on unused original chassis numbers; RS Williams chassis, Zagato body. R.S.W. Green when new. Sold at RM Sotheby's Monterey 2021.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-sanction-ii-0197",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato Sanction II 0197/R",
+   "year": "1991",
+   "maker": "Aston Martin",
+   "ids": [
+    "0197/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Sanction II: one of four built 1988-91 on unused original chassis numbers; RS Williams chassis, Zagato body. R.S.W. Green when new.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-sanction-ii-0198",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato Sanction II 0198/R",
+   "year": "1991",
+   "maker": "Aston Martin",
+   "ids": [
+    "0198/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Sanction II: one of four built 1988-91 on unused original chassis numbers; RS Williams chassis, Zagato body. R.S.W. Green when new. DB4-style bonnet.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-sanction-iii-344",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato Sanction III DB4/344/R",
+   "year": "2000",
+   "maker": "Aston Martin",
+   "ids": [
+    "DB4/344/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Sanction III: one of two built from spare Sanction II body shells on a DB4 chassis, completed in 2000.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
+  },
+  {
+   "id": "db4gtz-sanction-iii-424",
+   "parent": "1960-aston-martin-db4-gt-zagato",
+   "name": "DB4 GT Zagato Sanction III DB4/424/R",
+   "year": "2000",
+   "maker": "Aston Martin",
+   "ids": [
+    "DB4/424/R"
+   ],
+   "status": "Private owner",
+   "location": "Unknown",
+   "notes": "Sanction III: one of two built from spare Sanction II body shells on a DB4 chassis, completed in 2000.",
+   "photo": "",
+   "links": [],
+   "hidden": [],
+   "added": "2026-11-19"
   }
  ]
 }
