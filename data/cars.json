@@ -2252,7 +2252,10 @@
    "notes": "Cancelled high-performance, more luxurious version of the 914/6, pushed by Ferdinand Piëch after a modified 914 finished 6th at Le Mans in 1970. Welded steel roof, wider body (Karmann tub, finished by Baur), 911 S 2.4 (190 hp) or Carrera 2.7 (210 hp) engines. Projected at DM 45,000 against DM 30,000 for a 911 S, so it was dropped before production.\n\n11 built: prototype \"Brutus\" on 914/6 chassis 9141430195, plus ten 1972 pre-production cars, 914 233 0011 to 0020. Five went to Porsche and Piëch family or management, five to loyal customers, one exported to the US. A 1974 Porsche certificate quoted by Artcurial says fewer than 10; other sources say 11 (some say 12).\n\nOne 1972 car went new to Peter Gregg (Brumos) with air conditioning; its chassis isn't public. George Hussey owns another (chassis not public).\n\nSources: Renn Driver, Stuttcars, Artcurial, RM Sotheby's, Conceptcarz.",
    "photo": "",
    "links": [],
-   "hidden": [],
+   "hidden": [
+    "https://news.google.com/rss/articles/CBMiY0FVX3lxTE44VERzSTgwSWZQUHM1bFFqbVEtenNZVUlNN1I2U0s4M0FpRkRNTGluckhSVDBjeEppRHRnZ1htVW5BbnRydnFGYm9JazM5S25nOXpKZlpzZE16ZW5PWXpRWDlfOA?oc=5",
+    "https://news.google.com/rss/articles/CBMia0FVX3lxTE9lMHlPNUFrLXVucDNsS3ZSbW45ZFhHZ1psSEhzZW0xUkJac25raHlIR1Q2T1BfazlUQ0h2LTRiM3N4SW5sU1NZMkI1b3kza2J1OHpHS2NuVnRPVS1uZTZvck1fRGhQS1VvTjc4?oc=5"
+   ],
    "added": "2026-11-19"
   },
   {
@@ -2263,7 +2266,10 @@
    "maker": "Porsche",
    "ids": [
     "914 233 0011",
-    "9142330011"
+    "9142330011",
+    "Louise Piëch",
+    "Otis Chandler",
+    "Konradsheim"
    ],
    "status": "Private owner",
    "location": "Last sold 2020; RM listed it in Punta Gorda, Florida",
@@ -2371,7 +2377,9 @@
    "maker": "Porsche",
    "ids": [
     "914 233 0017",
-    "9142330017"
+    "9142330017",
+    "Michael Piëch",
+    "Embiricos"
    ],
    "status": "Private owner",
    "location": "Unknown",
@@ -2444,7 +2452,9 @@
    "ids": [
     "Brutus",
     "914 143 0195",
-    "9141430195"
+    "9141430195",
+    "Hartvigsen",
+    "Corina Piëch"
    ],
    "status": "Private owner",
    "location": "Unknown",
