@@ -18,6 +18,7 @@ library only.
 
     python3 research.py            # all cars
     python3 research.py bmw-x5-le-mans
+    python3 research.py --changed  # only cars whose search changed since they were last searched
 """
 import html
 import json
@@ -183,6 +184,11 @@ class Plan:
         return ['%s "%s"' % (base[0], i.replace('"', "")) for i in car["ids"]]
 
 
+def fingerprint(car, plan):
+    """What a search depends on (inherited from parents too), so a new photo or note doesn't count as a change."""
+    return json.dumps([plan.searches(car), plan.require(car), sorted(car.get("hidden", []))], ensure_ascii=False)
+
+
 def matches(item, groups):
     text = fold(item["title"] + " " + item["summary"])
     return all(any(rx.search(text) for rx in group) for group in groups)
@@ -250,8 +256,15 @@ def main():
     cars = json.loads(CARS.read_text())["cars"]
     plan = Plan(cars)
     data = json.loads(ARTICLES.read_text()) if ARTICLES.exists() else {"articles": {}}
-    only = set(sys.argv[1:])
+    searched = data.get("searched", {})
+    only = set(a for a in sys.argv[1:] if not a.startswith("--"))
+    if "--changed" in sys.argv:
+        only = {c["id"] for c in cars if searched.get(c["id"]) != fingerprint(c, plan)} or {""}
+        print("Changed: " + (", ".join(sorted(only - {""})) or "nothing to search"))
+        if only == {""} and set(data["articles"]) <= {c["id"] for c in cars}:
+            return   # nothing to search and no deleted car to tidy away
     ids = {c["id"] for c in cars}
+    searched = {k: v for k, v in searched.items() if k in ids}
     articles = {k: v for k, v in data["articles"].items() if k in ids}
     by_id = {c["id"]: c for c in cars}
     recent = (datetime.now(timezone.utc) - timedelta(days=ALERT_DAYS)).date().isoformat()
@@ -264,6 +277,7 @@ def main():
         hidden = {norm_url(u) for u in car.get("hidden", [])}
         kept = [a for a in articles.get(car["id"], []) if norm_url(a["url"]) not in hidden and not skipped(a["url"])]
         articles[car["id"]] = research(car, plan, kept)
+        searched[car["id"]] = fingerprint(car, plan)
         print(f"  {len(articles[car['id']]) - before:+d} new, {len(articles[car['id']])} total")
         parent = by_id.get(car.get("parent") or "")
         for a in articles[car["id"]][len(kept):]:
@@ -275,7 +289,7 @@ def main():
                 u, depth = norm_url(a["url"]), plan.depth(car)
                 if u not in alerts or depth < alerts[u][0]:
                     alerts[u] = (depth, alert)
-    ARTICLES.write_text(json.dumps({"updated": now(), "articles": articles}, indent=1, ensure_ascii=False) + "\n")
+    ARTICLES.write_text(json.dumps({"updated": now(), "articles": articles, "searched": searched}, indent=1, ensure_ascii=False) + "\n")
     if os.environ.get("ALERTS_FILE"):
         Path(os.environ["ALERTS_FILE"]).write_text(json.dumps([a for _, a in alerts.values()], indent=1, ensure_ascii=False))
         print(f"{len(alerts)} sale alert(s)")
